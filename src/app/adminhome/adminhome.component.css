@@ -1,0 +1,86 @@
+.adminHomeWrapper {
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 2px 2px 2px 5px #f2f7fa;
+  }
+  
+  .adminHomeMain {
+    text-align: center;
+  }
+  
+  .adminHomeButton-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 380px;
+    display: inline-block;
+  }
+  .breadcrumb-item a
+  {
+    color: #000;
+  }
+  .breadcrumb-item.active a
+  {
+    color: #3180AC;
+  }
+  .movieHeader
+  {
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    justify-content: center;
+  }
+  .textAlignR
+  {
+    text-align: right;
+  }
+  .movieHeader h4
+  {
+    font-weight: 900;
+    margin-bottom: 0;
+  }
+  .addBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 10px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.moviesListManage
+{
+  margin-top: 20px;
+}
+.textAlignL
+{
+  text-align: left;
+}
+.breadcrumb-item a
+{
+  cursor: pointer;
+}
+  
+  
+  
+  .adminHomeButton-container .form-group {
+    text-align: left;
+  }
+
+  
+  .adminHomeButton-container button {
+    background-color: #3180AC;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .adminHomeButton-container button:hover {
+    background-color: #3180AC;
+  }
+  

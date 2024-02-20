@@ -1,0 +1,94 @@
+.movieListWrapper
+{
+    margin: 10px;
+    margin-top: 20px;
+}
+.navigationWrapper
+{
+    display: flex;
+    padding: 0px 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+.movieCategory
+{
+    display: flex;
+}
+.categoryBtn.active
+{
+    background-color: #3180AC;
+    color: #FFF;
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: unset;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px 4px #f2f7fa;
+    font-weight: 600;
+    width: 185px;
+}
+.categoryBtn
+{
+    color: #3180AC;
+    background-color: #FFF;
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: unset;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 1px 1px 3px 2px #c1d8e6;
+    width: 185px;
+}
+.searchWrapper
+{
+    display: flex;
+}
+.searchBar
+{
+    background: #fff;
+    box-shadow: 1px 1px 3px 2px #c1d8e6;
+    width: 480px;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+.searchImg
+{
+    width: 18px;
+    height: 20px;
+    margin-bottom: 3px;
+}
+.searchText
+{
+    color: #3180AC;
+    border: unset;
+    width: 90%;
+    padding-left: 5px;
+}
+.searchText::placeholder {
+    color: #3180AC;
+    opacity: 1; /* Firefox */
+}
+.searchBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 5px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+.searchText:focus-visible
+{
+    border: unset;
+    outline: unset;
+}
+.filterWrapper
+{
+    display: flex;
+    align-items: center;
+}
+.filterImg
+{
+    width: 20px;
+    height: 20px;
+}

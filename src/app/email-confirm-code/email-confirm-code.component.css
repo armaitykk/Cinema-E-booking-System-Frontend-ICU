@@ -1,0 +1,211 @@
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3180AC;
+  }
+  
+  .loginMain {
+    text-align: center;
+  }
+  
+  .login-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 380px;
+    display: inline-block;
+  }
+  
+  .logoContainer {
+    background: #3180AC;
+    margin: auto;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .logoImgDiv {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .loginField {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  
+  .login-container .form-group {
+    text-align: left;
+  }
+  
+  .labelTag {
+    font-weight: 600;
+  }
+  
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    border: unset;
+    border-bottom: 1px solid #ccc;
+    border-radius: 3px;
+    color: #3180AC;
+  }
+  
+  .login-container input:focus-visible {
+    border: unset;
+    outline: unset;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .login-container input::placeholder {
+    color: #3180AC;
+    opacity: 0.7;
+  }
+  
+  .login-container button {
+    background-color: #3180AC;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #3180AC;
+  }
+  
+  .forgot-password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .noAccount {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .confirmation-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .confirmation-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-text-2 {
+    font-size: 16px;
+  }
+  /* Style for disabled buttons with a specific class */
+  .login-container button:disabled {
+    background-color: #ccc; /* Change the background color */
+    color: #000; /* Change the text color */
+    cursor: not-allowed; /* Change the cursor to indicate it's not clickable */
+  }
+  /* Style for error content */
+.error-content {
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    color: red;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for error modal */
+  .error-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  /* Style for error modal container */
+  .error-modal-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Relative positioning for close button */
+  }
+  
+  /* Style for close button in error modal */
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+  }
+  
+  /* Additional styles for error message text */
+  .error-message-text {
+    color: #ff0000;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .error-text-2
+  {
+    color: #000;
+    margin-bottom: 20px;
+  }
+  .supClass
+  {
+    color: #f62e2e;
+    font-size: 90%;
+    top: -0.3em;
+  }
+  

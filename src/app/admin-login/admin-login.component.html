@@ -1,0 +1,66 @@
+<div class="loginWrapper">
+    <div class="loginMain">
+      <div class="login-container">
+        <div class="logoContainer">
+          <img src="{{ logoImg }}" class="logoImgDiv" alt="Logo">
+        </div>
+        <p class="loginField">Admin Login</p>
+        <form (ngSubmit)="login()" #loginForm="ngForm">
+          <div class="form-group">
+            <label for="username" class="labelTag">Username <sup class="supClass">*</sup></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              [(ngModel)]="username"
+              placeholder="Enter your Username"
+              required
+              #usernameInput="ngModel"
+            >
+            <div *ngIf="loginForm.submitted && usernameInput.invalid" class="error-message">
+              Username is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="labelTag">Password <sup class="supClass">*</sup></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              placeholder="Enter your Password"
+              required
+              #passwordInput="ngModel"
+            >
+            <div *ngIf="loginForm.submitted && passwordInput.invalid" class="error-message">
+              Password is required.
+            </div>
+          </div>
+          <button type="submit" class="login-button" [disabled]="loginForm.invalid">Login</button>
+        </form>
+        <div *ngIf="isLoginSuccessful" class="confirmation-modal">
+          <div class="confirmation-content">
+            <span class="close-icon" (click)="closeConfirmationModal()">&times;</span>
+            <h2 class="confirmation-text">
+              Login successful!
+            </h2>
+            <p class="confirmation-text-2">
+              Please wait while we redirect you to the home page.
+            </p>
+          </div>
+        </div>
+        <div *ngIf="isLoginUnsuccessful" class="error-modal">
+          <div class="error-content">
+            <span class="close-icon" (click)="closeErrorModal()">&times;</span>
+            <h2 class="error-text">
+              Login failed!
+            </h2>
+            <p class="error-text-2">
+              Please check your credentials and try again.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

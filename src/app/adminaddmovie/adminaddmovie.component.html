@@ -1,0 +1,261 @@
+<app-admin-header></app-admin-header>
+<div class="addMovieWrapper">
+    <div class="addMovieMain">
+      <div class="addMovie-container">
+        <!-- Welcome Admin Message -->
+        <div class="welcomeMessage">
+            <h2>Hi, Admin!</h2>
+        </div>
+       
+  
+        <!-- Add Movie Form -->
+        <form  (ngSubmit)="addMovieToDatabase()"  class="addMovieForm">
+          <!-- Movie Title -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="movieTitle" class="labelTag">Movie Title</label>
+            <input class="form-control"
+              type="text"
+              id="movieTitle"
+              name="movieTitle"
+              formControlName="movieTitle"
+              placeholder="Enter Movie Title"
+              required
+            >
+            
+          </div>
+  
+          <!-- Movie Cast -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="movieCast" class="labelTag">Movie Cast</label>
+            <input class="form-control"
+              type="text"
+              id="movieCast"
+              name="movieCast"
+              formControlName="movieCast"
+              placeholder="Enter Movie Cast"
+            >
+          </div>
+  
+          <!-- Movie Category -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="movieCategory" class="labelTag">Movie Category</label>
+            <input class="form-control"
+              type="text"
+              id="movieCategory"
+              name="movieCategory"
+              formControlName="movieCategory"
+              placeholder="Enter Movie Category"
+            >
+          </div>
+  
+          <!-- Movie Director -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="movieDirector" class="labelTag">Movie Director</label>
+            <input class="form-control"
+              type="text"
+              id="movieDirector"
+              name="movieDirector"
+              formControlName="movieDirector"
+              placeholder="Enter Movie Director"
+            >
+          </div>
+  
+          <!-- Movie Producer -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="movieProducer" class="labelTag">Movie Producer</label>
+            <input class="form-control"
+              type="text"
+              id="movieProducer"
+              name="movieProducer"
+              formControlName="movieProducer"
+              placeholder="Enter Movie Producer"
+            >
+          </div>
+  
+          <!-- Show Time -->
+          <!-- <div class="form-group" [formGroup]="movieForm">
+            <label for="showTime" class="labelTag">Show Time</label>
+            <input class="form-control"
+              type="date"
+              id="showTime"
+              name="showTime"
+              formControlName="showTime"
+            >
+          </div> -->
+  
+          <!-- Release Date -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="releaseDate" class="labelTag">Release Date</label>
+            <input class="form-control"
+              type="date"
+              id="releaseDate"
+              name="releaseDate"
+              formControlName="releaseDate"
+            >
+          </div>
+  
+          <!-- Synopsis -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="synopsis" class="labelTag">Synopsis</label>
+            <textarea class="form-control" 
+              id="synopsis"
+              name="synopsis"
+              formControlName="synopsis"
+              placeholder="Enter Movie Synopsis"
+              required
+            ></textarea>
+           
+          </div>
+  
+          <!-- Reviews -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="reviews" class="labelTag">Reviews</label>
+            <textarea class="form-control" 
+              id="reviews"
+              name="reviews"
+              formControlName="reviews"
+              placeholder="Enter Movie Reviews"
+              required
+            ></textarea>
+            
+          </div>
+          <!-- Language -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="language" class="labelTag">Movie Language</label>
+            <input class="form-control"
+              type="text"
+              id="language"
+              name="language"
+              formControlName="language"
+              placeholder="Enter Movie Language"
+              required
+            >
+           
+          </div>
+  
+          <!-- Trailer Link -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="trailerLink" class="labelTag">Trailer Link</label>
+            <input class="form-control"
+              type="text"
+              id="trailerLink"
+              name="trailerLink"
+              formControlName="trailerLink"
+              placeholder="Enter Movie Trailer Link"
+              required
+            >
+           
+          </div>
+  
+          <!-- Film Rating Code -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="filmRatingCode" class="labelTag">Film Rating Code</label>
+            <input class="form-control"
+              type="text"
+              id="filmRatingCode"
+              name="filmRatingCode"
+              formControlName="movieCertificationCode"
+              placeholder="Enter Film Rating Code"
+            >
+          </div>
+  
+          <!-- Rating -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="rating" class="labelTag">Rating</label>
+            <input class="form-control"
+              type="number"
+              id="rating"
+              name="rating"
+              formControlName="rating"
+              placeholder="Enter Movie Rating"
+              required
+            >
+           
+          </div>
+          <!-- Movie Availability Dropdown -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="movieAvailability" class="labelTag">Movie Availability</label>
+            <select class="form-control" id="movieAvailability" name="movieAvailability" formControlName="movieAvailability">
+              <option value="0">Currently Playing</option>
+              <option value="1">Coming Soon</option>
+              <option value="2">Archived</option>
+            </select>
+          </div>
+
+     
+          <!-- <div class="form-check">
+            <input class="form-control"
+              type="checkbox"
+              id="isPlayingNow"
+              name="isPlayingNow"
+              [checked]="movieForm.get('playingNow')?.value || false"
+              (change)="toggleCheckbox('playingNow')"
+              class="form-check-input"
+            >
+            <label class="form-check-label" for="isPlayingNow">Is Playing Now</label>
+          </div>
+  
+     
+          <div class="form-check">
+            <input class="form-control"
+              type="checkbox"
+              id="isArchived"
+              name="isArchived"
+              [checked]="movieForm.get('archived')?.value || false"
+              (change)="toggleCheckbox('archived')"
+              class="form-check-input"
+            >
+            <label class="form-check-label" for="isArchived">Is Archived</label>
+          </div>
+  
+   
+          <div class="form-check">
+            <input class="form-control"
+              type="checkbox"
+              id="isUpcoming"
+              name="isUpcoming"
+              [checked]="movieForm.get('_upcoming')?.value || false"
+              (change)="toggleCheckbox('_upcoming')"
+              class="form-check-input"
+            >
+            <label class="form-check-label" for="isUpcoming">Is Upcoming</label>
+          </div> -->
+  
+          <!-- Poster Source -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="posterSrc" class="labelTag">Poster Source</label>
+            <input class="form-control"
+              type="text"
+              id="posterSrc"
+              name="posterSrc"
+              formControlName="posterSrc"
+              placeholder="Enter Poster Source URL"
+            >
+            
+          </div>
+  
+      <!-- Banner Source -->
+          <div class="form-group" [formGroup]="movieForm">
+            <label for="bannerSrc" class="labelTag">Banner Source</label>
+            <input class="form-control"
+              type="text"
+              id="BannerSrc"
+              name="BannerSrc"
+              formControlName="bannerSrc"
+              placeholder="Enter Poster Source URL"
+            >
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="addBtn">Add Movie</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- <app-admin-footer></app-admin-footer> -->
+  
+  
+  
+  
+  
+  
+  

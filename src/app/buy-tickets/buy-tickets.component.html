@@ -1,0 +1,152 @@
+<app-header></app-header>
+<div class="container">
+    <h4>Book your Tickets</h4>
+
+    <!-- Movie Details -->
+    <div class="row movieDetailsSection">
+        <div class="col-md-4">
+            <img src="{{movieList.posterSrc}}" alt="Movie Poster" class="movie-poster">
+        </div>
+        <div class="col-md-8 texAlignL">
+          <h2>{{movieList.movieTitle}}</h2>
+          <p class="durationField">{{movieList.releaseDate}} | <span class="genereType">{{movieList.movieCategory}} </span> </p>
+        </div>
+    </div>
+    <!--Seat Selection Info-->
+    <div class="seatSelectionInfo">
+        
+      
+    </div>
+    <!-- Select Seats -->
+    <div class="select-seats">
+        <div class="flexSeat">
+            <h3>Select Seats </h3>
+            <p><button (click)="openSeatPopup()" class="seatsInfoBtn"><i class="fa fa-pencil"> </i> {{totalTickets}} tickets</button></p>
+        </div>
+        
+        <div class="seat-grid">
+            <div class="seat" *ngFor="let seat of seats" [class.selected]="seat.selected" [class.reserved]="seat.isReserved" (click)="selectSeat(seat.seat)">
+                {{ seat.seat }}
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Screen and Message -->
+    <div class="screen-this-way">
+        <p class="screen_text">All eyes this way please!</p>
+        <div class="screen_shape"></div>
+        
+    </div>
+
+   
+
+    <!-- Error Message -->
+<div *ngIf="showError" class="error-message">
+    <p> 
+        The number of seats selected doesnot match your requirement.
+    </p> 
+    <p> 
+        You can continue to select the remaning seats or modify your required seats.
+    </p>
+  </div>
+  
+  <div class="button-group">
+    <button (click)="onClickReviewOrder()">Review Order</button>
+  </div>
+    <!-- Popup Section -->
+  <div class="popup-overlay" *ngIf="showSeatPopup">
+    <div class="popup-content">
+      <h2>Select Options</h2>
+       <!-- Select Movie Date -->
+        <div class="select-time">
+            <label for="movie-date" class="marR5">Select Show Date:</label>
+            <input class="dateInpField" type="date" [(ngModel)]="selectedDate" id="movie-date" required (change)="onShowDateChange($event)">
+        </div>
+        <!-- Select Movie Time -->
+        <div class="select-time customSelectTime">
+            <label for="movie-time">Select Show Time:</label>
+            <select class="form-control marR5 width59per" id="movie-time" name="movie-time" [(ngModel)]="selectedTime" required>
+                <option *ngFor="let show of movieShowsScheduled" [value]="show.showTime">{{ show.showTimeFormatted }}</option>
+            </select>
+        </div>
+
+
+    <!-- Select Number of Seats -->
+    <div class="numberofSeats">
+        <p class="selectSeatsP">Select Number of Tickets:</p>
+        <div class="seatCategories">
+            <div class="flxItems">
+                <span>Adults: ($11.00) </span>
+                <div class="counter">
+                    <button class="counterBtn" (click)="decrement('adult')">-</button>
+                    <input type="number" [(ngModel)]="adultCount" min="0" class="counterInpt">
+                    <button class="counterBtn" (click)="increment('adult')">+</button>
+                </div>
+            </div>
+            <div class="flxItems">
+                <span>Child: ($9.00) </span>
+                <div class="counter">
+                    <button class="counterBtn" (click)="decrement('child')">-</button>
+                    <input type="number" [(ngModel)]="childCount" min="0" class="counterInpt">
+                    <button class="counterBtn" (click)="increment('child')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="error-message" *ngIf="showAddSeatsErrorDiv">
+        {{addSeatsError}}
+    </div>
+      <button (click)="onAddSeats()">Add Seats</button>
+      <!-- <button (click)="onCancel()">Cancel</button> -->
+    </div>
+  </div>
+ 
+
+<!-- Review Order Popup Section -->
+<div class="popup-overlay" *ngIf="showReviewOrderPopup">
+    <div class="popup-content">
+      <h2>Order Summary</h2>
+      <p>Movie Name: <span>{{ movieList.movieTitle }}</span></p>
+      <p>Show Time: <span>{{ selectedTimeFormatted }}</span></p>
+      <p>Total Tickets: <span>{{ totalTickets }}</span></p>
+      <p>Seats Selected: <span>{{ selectedSeats.join(', ') }}</span></p>
+      <p>Price of Tickets: <span>${{ totalTicketsPrice}} (Exclusive of Taxes&Promotions)</span> </p>
+      
+      
+      <div class="button-group">
+        <button (click)="onUpdateOrder()">Update Order</button>
+        <button (click)="onProceedToCheckout()">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Order Popup Section -->
+<div class="popup-overlay" *ngIf="showCantCheckoutPopup">
+    <div class="popup-content">
+      <p>Sorry we can't proceed to checkout without logging in! </p>
+        
+        <p>Please login/signup to continue</p>
+      <div class="button-group">
+        <button class="addBtn" routerLink="/login">Login</button>
+        <button class="addBtn" routerLink="/signup">Signup</button>
+      </div>
+      <!-- <p>Movie Name: <span>{{ movieList.movieTitle }}</span></p>
+      <p>Show Time: <span>{{ selectedTimeFormatted }}</span></p>
+      <p>Total Tickets: <span>{{ totalTickets }}</span></p>
+      <p>Seats Selected: <span>{{ selectedSeats.join(', ') }}</span></p>
+      <p>Price of Tickets: <span>${{ totalTicketsPrice}} (Exclusive of Taxes&Promotions)</span> </p>
+      
+      
+      
+     -->
+    </div>
+  </div>
+  
+  
+  
+</div>
+<app-footer></app-footer>
+
+

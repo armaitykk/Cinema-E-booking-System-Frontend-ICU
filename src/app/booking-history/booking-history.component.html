@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="orderHistoryDiv">
+    <div class="activeOrdersList">
+        <h2>Active Orders</h2>
+        <div class="activeOrderDetailsDiv">
+            <div *ngIf="activeOrders.length > 0; else noActiveOrders">
+                <div class="orderDetails" *ngFor="let order of activeOrders; let i = index">
+                    <h3>Order {{ orderCounter + i }}</h3>
+                    <!-- <p>Show Time: {{ order.movie.movieTitle }} </p> -->
+                    <p> Movie Name: {{ order.movie.movieTitle }}</p>
+                    <p>Booking Date: {{ order.booking.bookingDate }}</p>
+                    <p>Total Price: ${{ order.booking.totalPrice | number:'1.2-2' }}</p>
+                    <p>Seat Numbers: {{ getSeatNumbers(order.tickets) }}</p> 
+                    <p>Ticket Types: {{ getTicketTypes(order.tickets) }}</p>
+                </div>
+            </div>
+            <ng-template #noActiveOrders>
+                <div class="noOrders">
+                    <p>No active orders!</p>
+                </div>
+            </ng-template>
+        </div> 
+    </div>
+    <div class="pastOrdersList">
+        <h2>Past Orders</h2>
+        <div class="pastOrderDetailsDiv">
+            <div *ngIf="pastOrders.length > 0; else noPastOrders">
+                <div class="orderDetails" *ngFor="let order of pastOrders; let i = index">
+                    <h3>Order {{ orderCounter + i }}</h3>
+                    <p>Booking Date: {{ order.booking.bookingDate }}</p>
+                    <p>Total Price: ${{ order.booking.totalPrice | number:'1.2-2' }}</p>
+                    <p>Seat Numbers: {{ getSeatNumbers(order.tickets) }}</p> 
+                    <p>Ticket Types: {{ getTicketTypes(order.tickets) }}</p>
+                    <!-- <p>Show Time: </p>
+                    <p> Movie Name: </p> -->
+                </div>
+            </div>
+            <ng-template #noPastOrders>
+                <div class="noOrders">
+                    <p>No past orders!</p>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

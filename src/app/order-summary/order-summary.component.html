@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Order Summary</h1>
+  
+    <div *ngFor="let ticket of tickets; let i = index">
+      <div>
+        Movie: {{ ticket.movieTitle }}
+      </div>
+      <div>
+        Show Time: {{ ticket.showTime }}
+      </div>
+      <div>
+        Seat: {{ ticket.seat }}
+      </div>
+      <div>
+        Age: {{ ticket.age }}
+      </div>
+      <div>
+        Price: {{ ticket.price }}
+      </div>
+      <!-- Button to Delete Individual Ticket -->
+        <button (click)="deleteTicket(i)" caption="deleteTicket">Delete</button>
+        <hr>
+    </div>
+    <div class="totalOrderPrice">
+      <h2>Total Order Price: $20</h2>
+    </div>
+  
+    <!-- Buttons for Updating Order or Proceeding to Checkout -->
+    <div class="actions">
+        <button (click)="updateOrder()" caption="updateOrder">Update Order</button>
+        <button (click)="checkout()" caption="checkout">Proceed to Checkout</button>
+    </div>
+  </div>
+<app-footer></app-footer>
+
+  

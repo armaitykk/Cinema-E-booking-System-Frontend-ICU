@@ -1,0 +1,29 @@
+<div class="headerWrapper">
+    <div class="row">
+        <div class="col-md-2">
+            <img class="headerLogo" src="{{ imageSrc }}" routerLink="/home">
+        </div>
+        <div class="col-md-10 heigth50px">
+            <div class="textalignRight customUserNameDiv">
+                <!-- Check if the user is not logged in -->
+                <ng-container *ngIf="!loggedIn">
+                    <button class="navButton" routerLink="/login">Login</button>
+                    <button class="navButton" routerLink="/signup">Sign Up</button>
+                </ng-container>
+                <!-- Check if the user is logged in -->
+                <ng-container *ngIf="loggedIn">
+                    <div class="dropdown">
+                        <button class="dropbtn" (click)="showDropdownOptions()">{{ userFirstName }} <i class="fa fa-caret-down"></i> </button>
+                        <div class="myDropdown" [ngClass]="{'show': isDropdownVisible}" (click)="closeDropdown($event)">
+                          <!-- Dropdown content here -->
+                            <a routerLink="/home">Home</a>
+                            <a routerLink="/edit-profile">My Account</a>
+                            <a routerLink="/booking-history">My Bookings</a>
+                            <a (click)="logout()" routerLink="/login">Logout</a> 
+                        </div>
+                      </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

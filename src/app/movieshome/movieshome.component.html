@@ -1,0 +1,80 @@
+<div class="movieListWrapper">
+  <div class="navigationWrapper">
+    <div class="movieCategory">
+      <button class="categoryBtn" (click)="setActiveCategory('nowPlaying')" [class.active]="activeCategory === 'nowPlaying'">Now Playing</button>
+      <button class="categoryBtn" (click)="setActiveCategory('upcoming')" [class.active]="activeCategory === 'upcoming'">Upcoming Movies</button>
+    </div>
+    <div class="searchWrapper">
+      <div class="searchBar">
+        <img src="{{searchLogo}}" class="searchImg">
+        <input class="searchText" type="text" placeholder="Search Movies" [(ngModel)]="searchText" (change)="changedSearchText()">
+      </div>
+      <button class="searchBtn" (click)="searchValueChanged($event)">Search</button>
+    </div>
+    <div class="filterWrapper" (click)="toggleFilterDropdown($event)" (change)="changedFilterCategory()">
+      <div class="filter-dropdown" (click)="$event.stopPropagation()">
+        <mat-form-field>
+          <mat-label>
+            <div class="custom-trigger">
+              <img src="{{filterLogo}}" class="filterImg">
+              <span style="margin-left: 5px;">Filter</span>
+            </div>
+          </mat-label>
+          <mat-select [(ngModel)]="selectedCategories" (ngModelChange)="applyFilters()" multiple>
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="activeCategory === 'nowPlaying'">
+  <div *ngIf="noResultsFound; else nowPlayingResults" class="nowShowingWrapper">
+    <p class="noMessage">No movies found.</p>
+  </div>
+  <ng-template #nowPlayingResults>
+    <div class="row text-center marB5">
+      <div class="col-md-3 width24per" *ngFor="let movie of filteredMovies">
+        <div class="card nowShowingCards" *ngIf="movie.movieAvailability === 'CurrentlyRunning'" [routerLink]="['/viewmovieinfo', movie.movieTitle]">
+          <div class="imgContainer">
+            <img src="{{movie.posterSrc}}" class="nowShowingPoster">
+          </div>
+          <div class="movieInfo">
+            <p class="movieTitle">{{movie.movieTitle}}</p>
+            <p class="movieReleaseDate">Release Date: <span>{{movie.releaseDate}}</span></p>
+            <p class="movieRating"> Rating: <span>{{movie.rating}} </span> / 10</p>
+            <button class="bookTicketBtn" [routerLink]="['/buy-tickets', movie.movieTitle]">Book Ticket</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div *ngIf="activeCategory === 'upcoming'">
+  <div *ngIf="noResultsFound; else upcomingResults" class="upComingWrapper">
+    <p class="noMessage">No movies found.</p>
+  </div>
+  <ng-template #upcomingResults>
+    <div class="row text-center marB5">
+      <div class="col-md-3 width24per" *ngFor="let movie of filteredMovies">
+        <div class="card upComingCards" *ngIf="movie.movieAvailability === 'ComingSoon'" [routerLink]="['/viewmovieinfo', movie.movieTitle]">
+          <div class="imgContainer">
+            <img src="{{movie.posterSrc}}" class="upComingPoster">
+          </div>
+          <div class="movieInfo">
+            <p class="movieTitle">{{movie.movieTitle}}</p>
+            <p class="movieReleaseDate">Release Date: <span>{{movie.releaseDate}}</span></p>
+            <p class="movieRating"> Certification: <span>{{movie.movieCertificationCode}} </span></p>
+            <button class="bookTicketBtn" [routerLink]="['/viewmovieinfo', movie.movieTitle]">View Movie Info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+

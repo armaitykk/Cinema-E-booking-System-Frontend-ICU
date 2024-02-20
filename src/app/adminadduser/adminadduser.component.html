@@ -1,0 +1,48 @@
+<app-admin-header></app-admin-header>
+<div class="addUserWrapper">
+    <div class="addUserMain">
+      <div class="addUser-container">
+        <!-- Welcome Admin Message -->
+        <div class="welcomeMessage">
+            <h2>Hi, Admin!</h2>
+        </div>
+       
+  
+        <!-- Add Admin Form -->
+        <form (ngSubmit)="addNewAdmin()" class="addUserForm">
+          <!-- Admin Email -->
+          <div class="form-group" [formGroup]="newAdminForm">
+            <label for="userEmail" class="labelTag">Email ID</label>
+            <input class="form-control"
+              type="email"
+              id="userEmail"
+              name="userEmail"
+              formControlName="email"
+              placeholder="Enter User Email"
+              required >
+          </div>
+          <!--  Admin Password -->
+          <div class="form-group" [formGroup]="newAdminForm">
+            <label for="userPassword" class="labelTag">Password</label>
+            <input class="form-control"
+              type="password"
+              id="userPassword"
+              name="userPassword"
+              formControlName="password"
+              placeholder="Create User Password"
+              required >
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="addBtn">Add Admin</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-admin-footer></app-admin-footer>
+  
+  
+  
+  
+  
+  
+  

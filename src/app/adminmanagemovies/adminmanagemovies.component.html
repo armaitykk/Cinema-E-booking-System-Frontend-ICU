@@ -1,0 +1,323 @@
+<div class="moviesList">
+  <div class="row movieHeader">
+    <div class="col-md-6 textAlignL">
+     <h4> Movies List</h4>
+    </div>
+    <div class="col-md-6 textAlignR">
+      <button class="addBtn" routerLink = "/admin/addmovie">Add Movie</button>
+    </div>
+    
+  </div>
+  <div class="moviesListManage">
+    <div class="row" *ngFor="let movie of movieList">
+      <!-- <div class="col-md-2">
+        <p>{{movie.id}}</p>
+      </div> -->
+      <div class="col-md-3">
+        <p>{{movie.movieTitle}}</p>
+      </div>
+      <div class="col-md-3">
+        <a (click)="editMovie(movie.id, movie.movieTitle)">Edit</a>
+      </div>
+      <div class="col-md-3">
+        <a (click)="scheduleMovie(movie.id)">Schedule</a>
+      </div>
+      <div class="col-md-3">
+        <a (click)="deleteMovie(movie.id)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Edit Movie Popup -->
+<div class="editMoviePopup" *ngIf="showEditPopup">
+  <div class="popupOverlay"></div>
+  <div class="popupContent">
+    <div class="addMovieWrapper">
+      <div class="addMovieMain">
+        <div class="addMovie-container"> 
+          <!-- Add Movie Form -->
+          <form  (ngSubmit)="updateMovie()"  class="addMovieForm">
+            <!-- Movie Title -->
+            <div class="mb-3">
+              <label for="movieTitle" class="labelTag">Movie Title</label>
+              <input class="form-control"
+                type="text"
+                id="movieTitle"
+                name="movieTitle"
+                [(ngModel)]="movieFormData.movieTitle" 
+              >
+              
+            </div>
+    
+            <!-- Movie Cast -->
+            <div class="mb-3">
+              <label for="movieCast" class="labelTag">Movie Cast</label>
+              <input class="form-control"
+                type="text"
+                id="movieCast"
+                name="movieCast"
+                [(ngModel)]="movieFormData.movieCast"
+              >
+            </div>
+    
+            <!-- Movie Category -->
+            <div class="mb-3">
+              <label for="movieCategory" class="labelTag">Movie Category</label>
+              <input class="form-control"
+                type="text"
+                id="movieCategory"
+                name="movieCategory"
+                [(ngModel)]="movieFormData.movieCategory"
+              >
+            </div>
+    
+            <!-- Movie Director -->
+            <div class="mb-3">
+              <label for="movieDirector" class="labelTag">Movie Director</label>
+              <input class="form-control"
+                type="text"
+                id="movieDirector"
+                name="movieDirector"
+                [(ngModel)]="movieFormData.movieDirector"
+              >
+            </div>
+    
+            <!-- Movie Producer -->
+            <div class="mb-3">
+              <label for="movieProducer" class="labelTag">Movie Producer</label>
+              <input class="form-control"
+                type="text"
+                id="movieProducer"
+                name="movieProducer"
+                [(ngModel)]="movieFormData.movieProducer"
+              >
+            </div>
+    
+<!-- Show Time -->
+<div class="mb-3">
+  <label for="showTime" class="labelTag">Show Times</label>
+  <ng-container *ngFor="let show of movieShowsScheduled; let i = index">
+    <!-- Display date only if it's different from the previous date -->
+    <ng-container *ngIf="i === 0 || show.showDate !== movieShowsScheduled[i - 1]?.showDate">
+      <p class="showDateP">{{ show.showDate }}</p>
+    </ng-container>
+    
+    <div class="side-by-side">
+      <div class="flexBtns">
+        <span *ngIf="!isEditingShowTime">{{ getFormattedShowTime(show.showTime) }}</span>
+        <ng-container *ngIf="isEditingShowTime && editedShowId === show.showId">
+          <label for="editedShowTime" class="labelTag">Edit Show Time</label>
+          <select class="form-control width20per" id="editedShowTime" name="editedShowTime" [(ngModel)]="editedShowTime" required>
+            <option value="10">10:00 AM</option>
+            <option value="13">1:00 PM</option>
+            <option value="16">4:00 PM</option>
+            <option value="19">7:00 PM</option>
+            <option value="22">10:00 PM</option>
+          </select>
+          <button type="button" class="showTimeBtns" (click)="saveEditedShowTime()">Save</button>
+        </ng-container>
+        <ng-container *ngIf="!isEditingShowTime || (isEditingShowTime && editedShowId !== show.showId)">
+          <button type="button" class="showTimeBtns" (click)="editMovieShow(show.showId, show.showTime, show.showDate, show.movieId, show.duration_minutes)"><i class="fa fa-pencil"> </i></button>
+        </ng-container>
+        <button type="button" class="showTimeBtns" (click)="deleteMovieShow(show.showId)"><i class="fa fa-trash-o"> </i></button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+
+
+
+
+    
+            <!-- Release Date -->
+            <div class="mb-3">
+              <label for="releaseDate" class="labelTag">Release Date</label>
+              <input class="form-control"
+                type="date"
+                id="releaseDate"
+                name="releaseDate"
+                [(ngModel)]="movieFormData.releaseDate"
+              >
+            </div>
+    
+            <!-- Synopsis -->
+            <div class="mb-3">
+              <label for="synopsis" class="labelTag">Synopsis</label>
+              <textarea class="form-control" 
+                id="synopsis"
+                name="synopsis"
+                [(ngModel)]="movieFormData.synopsis"
+              ></textarea>
+             
+            </div>
+    
+            <!-- Reviews -->
+            <div class="mb-3">
+              <label for="reviews" class="labelTag">Reviews</label>
+              <textarea class="form-control" 
+                id="reviews"
+                name="reviews"
+                [(ngModel)]="movieFormData.reviews"
+              ></textarea>
+              
+            </div>
+            <!-- Language -->
+            <div class="mb-3">
+              <label for="language" class="labelTag">Movie Language</label>
+              <input class="form-control"
+                type="text"
+                id="language"
+                name="language"
+                [(ngModel)]="movieFormData.language"
+              >
+             
+            </div>
+    
+            <!-- Trailer Link -->
+            <div class="mb-3">
+              <label for="trailerLink" class="labelTag">Trailer Link</label>
+              <input class="form-control"
+                type="text"
+                id="trailerLink"
+                name="trailerLink"
+                [(ngModel)]="movieFormData.trailerLink"
+              >
+             
+            </div>
+    
+            <!-- Film Rating Code -->
+            <div class="mb-3">
+              <label for="filmRatingCode" class="labelTag">Film Rating Code</label>
+              <input class="form-control"
+                type="text"
+                id="filmRatingCode"
+                name="filmRatingCode"
+                [(ngModel)]="movieFormData.movieCertificationCode"
+              >
+            </div>
+    
+            <!-- Rating -->
+            <div class="mb-3">
+              <label for="rating" class="labelTag">Rating</label>
+              <input class="form-control"
+                type="number"
+                id="rating"
+                name="rating"
+                [(ngModel)]="movieFormData.rating"
+              >
+             
+            </div>
+            <!-- Movie Availability Dropdown -->
+            <div class="mb-3">
+              <label for="movieAvailability" class="labelTag">Movie Availability</label>
+              <select class="form-control" id="movieAvailability" name="movieAvailability" [(ngModel)]="movieFormData.movieAvailability">
+                <option value="CurrentlyRunning">Currently Playing</option>
+                <option value="ComingSoon">Coming Soon</option>
+                <option value="Archived">Archived</option>
+              </select>
+            </div>
+
+
+            <!-- Poster Source -->
+            <div class="mb-3">
+              <label for="posterSrc" class="labelTag">Poster Source</label>
+              <input class="form-control"
+                type="text"
+                id="posterSrc"
+                name="posterSrc"
+                [(ngModel)]="movieFormData.posterSrc"
+              >
+              
+            </div>
+    
+        <!-- Banner Source -->
+            <div class="mb-3">
+              <label for="bannerSrc" class="labelTag">Banner Source</label>
+              <input class="form-control"
+                type="text"
+                id="BannerSrc"
+                name="BannerSrc"
+                [(ngModel)]="movieFormData.bannerSrc"
+              >
+            </div>
+            <div class="btnsWrapper">
+              <!-- Submit Button -->
+              <button type="submit" class="addBtn marR15">Update Movie</button>
+              <button class="closePopupBtn addBtn" (click)="closeEditPopup()">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+
+
+<!-- Schedule Movie Popup -->
+<div class="editMoviePopup" *ngIf="showSchedulePopup">
+  <div class="popupOverlay"></div>
+  <div class="popupContent schedulePopup">
+    <div class="addMovieWrapper">
+      <div class="addMovieMain">
+        <div class="addMovie-container">
+          <form [formGroup]="scheduleMovieForm" (ngSubmit)="addShowSchedule()" class="addMovieForm">
+            <div class="mb-3">
+              <label for="duration_minutes" class="labelTag">Movie Duration</label>
+              <input class="form-control"
+                type="number"
+                id="duration_minutes"
+                name="duration_minutes"
+                formControlName="duration_minutes"
+                placeholder="Add Movie Duration"
+                required>
+            </div>
+            <div class="mb-3">
+              <label for="showDate" class="labelTag">Show Date</label>
+              <input class="form-control"
+              type="date"
+              id="showDate"
+              name="showDate"
+              formControlName="showDate"
+              placeholder="Enter Movie Show Date"
+              required
+              (change)="onShowDateChange($event)">
+            </div>
+            <div class="mb-3">
+              <label for="showTime" class="labelTag">Show Time</label>
+              <select class="form-control" id="showTime" name="showTime" formControlName="showTime" required>
+                <ng-container *ngFor="let availableShow of movieShowsAvailable">
+                  <option [value]="availableShow">{{ getFormattedShowTime(availableShow) }}</option>
+                </ng-container>
+              </select>
+            </div>
+            <div class="btnsWrapper">
+              <button type="submit" class="addBtn marR15">Schedule Movie</button>
+              <button class="closePopupBtn addBtn" (click)="closeSchedulePopup()">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="errorSchedulingMovie" class="error-modal">
+  <div class="error-content">
+    <span class="close-icon" (click)="closeErrorModal()">&times;</span>
+    <h2 class="error-text">
+      Add Scheduled failed!
+    </h2>
+    <p class="error-text-2">
+     {{errorMessageScheduled}}
+    </p>
+  </div>
+</div>
+
+
+
+
+  

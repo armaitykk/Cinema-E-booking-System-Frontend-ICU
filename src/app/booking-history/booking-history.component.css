@@ -1,0 +1,17 @@
+.activeOrdersList ,.pastOrdersList
+{
+    width: 800px;
+    background: #3180ac3d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 5px #f2f7fa;
+    margin: 30px auto;
+    padding: 15px;
+}
+.orderDetails
+{
+    background: #fff;
+    /* box-shadow: 2px 2px 2px 5px #f2f7fa; */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}

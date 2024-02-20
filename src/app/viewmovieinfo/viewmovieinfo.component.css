@@ -1,0 +1,82 @@
+.bannerBg 
+{
+    width: 100%;
+    height: 300px;
+    z-index: -1;
+    opacity: 0.4;
+    /* border-radius: 10px; */
+}
+.posterBg
+{
+    width: 300px;
+    height: 340px;
+    z-index: 0;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    border-radius: 10px;
+}
+
+.movieDetailsDiv
+{
+    width: 780px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.movieTitle
+{
+    font-weight: 900;
+    font-size: 24px;
+}
+.ratingField
+{
+    font-weight: 500;
+    font-size: 18px;
+}
+.durationField, .genereType
+{
+font-size: 14px;
+}
+.aboutHeading
+{
+    font-weight: 900;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.castSubheading
+{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.btnsForMovie
+{
+    display: flex;
+    align-items: center;
+}
+.trailerLink
+{
+    width: 20%;
+}
+.bookNowOption
+{
+    width: 20%;
+}
+.movieBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 10px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}

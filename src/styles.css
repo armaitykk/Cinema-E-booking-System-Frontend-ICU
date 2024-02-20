@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/* In your CSS or SCSS file */
+@import '~font-awesome/css/font-awesome.css';
+
+
+*
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+  }
+  
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Set the color of the scrollbar thumb */
+    border-radius: 5px; /* Round the corners of the thumb */
+  }

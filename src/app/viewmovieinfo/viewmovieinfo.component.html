@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="movieInfoWrapper">
+    <div class="bannerDiv">
+        <img src="{{movieList.bannerSrc}}" class="bannerBg">
+        <img src="{{movieList.posterSrc}}" class="posterBg">
+    </div>
+    <div class="movieDetailsDiv">   
+        <div class="movieInfo">
+            <h3 class="movieTitle">{{movieList.movieTitle}}</h3>
+            <p class="ratingField">Rating: {{movieList.rating}} / 10</p>
+            <p class="durationField">{{movieList.releaseDate}} | <span class="genereType">{{movieList.movieCategory}} </span> </p>
+            
+            <div class="btnsForMovie">
+                <div class="trailerLink">
+                    <button class="movieBtn playTrailer" (click)="openIframeDialog(iframeUrl)">Play Trailer</button>
+                </div>
+                <div class="bookNowOption">
+                    <button class="movieBtn bookTicketBtn" [routerLink]="['/buy-tickets', movieList.movieTitle]">Book Ticket</button>
+                </div>
+            </div>
+
+            <h3 class="aboutHeading">About the Movie</h3>
+            <div class="movieSynopsis">
+                <p>{{movieList.synopsis}}</p>
+            </div>
+            <div class="castInfo">
+                <h4 class="castSubheading">Actors / Actress</h4>
+                <p>{{movieList.movieCast}}</p>
+                <h4 class="castSubheading">Director(s)</h4>
+                <p>{{movieList.movieDirector}}</p>
+                <h4 class="castSubheading">Producer(s)</h4>
+                <p>{{movieList.movieProducer}}</p>
+            </div>     
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

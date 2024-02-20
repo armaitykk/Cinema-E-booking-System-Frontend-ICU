@@ -1,0 +1,355 @@
+.container {
+    width: 80%;
+    margin: 2em auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+
+
+.checkoutContainerMain
+{
+    width: 800px;
+    background: #3180ac3d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 5px #f2f7fa;
+    margin: 30px auto;
+    padding: 15px;
+}
+.paymentCardDiv
+{
+    background: #fff;
+    padding: 10px 10px 0px 10px;
+    border-radius: 5px;
+    height: 60px;
+    width: 300px;
+    margin: 10px 0;
+}
+.addBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 10px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.cardDetails {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+.cardDetailsContent 
+{
+    color: #3180AC; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    margin: auto;
+}
+.cardDetailsContent h2
+{
+    border-bottom: 1px solid #3180AC;
+    font-weight: 800;
+    margin: 5px;
+    /* padding: 5px; */
+}
+.supClass {
+    color: #f62e2e;
+    font-size: 90%;
+    top: -0.3em;
+}
+.paymentBtns
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 5px 10px;
+    text-align: center;
+    border: unset;
+    margin-left: 15px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+.paymentCardDiv
+{
+    background: #fff;
+    padding: 10px 10px 0px 10px;
+    border-radius: 5px;
+    height: 80px;
+}
+.paymentBtns
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 5px 10px;
+    text-align: center;
+    border: unset;
+    margin-left: 15px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+.flexBtns
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cardDetailsOnly
+{
+    width: 40%;
+}
+.billingAddressDetails
+{
+    width: 45%;
+}
+.paymentBtns[disabled] {
+    background-color: #ccc; 
+    color: #3180AC; 
+    cursor: not-allowed; 
+    opacity: 0.9; 
+  }
+.paymentBillingDetails
+{
+    display: flex;
+    justify-content: space-between;
+}
+.paymentBillingDetails h4
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.dsplyFlx
+{
+    display: flex;
+}
+.dsplyFlxRadio
+{
+    display: flex;
+    align-items: center;
+}
+.cardRadioBtn
+{
+ margin: 0 7px;
+}
+.marB0
+{
+    margin-bottom: 0;
+}
+.promoCode
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.inpBtnFlx
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.inpBtnFlx button
+{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+.width35per
+{
+    width: 35%;
+}
+.marR10
+{
+    margin-right: 10px;
+}
+.success-message
+{
+    color: green;
+    font-weight: bold;
+}
+.error-message
+{
+    color: #f62e2e;
+    font-weight: bold;
+}
+
+
+/* Footer CSS */
+.footerWrapper
+{
+    /* position: relative; */
+    /* bottom: 0; */
+    background-color: #3180AC;
+    height: 60px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+}
+.footerMain
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.footerText
+{
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+/* Style the confirmation modal */
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .confirmation-content {
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    color: green;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .confirmation-text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .confirmation-text-2
+  {
+    color: #000;
+    margin-bottom: 20px;
+  }
+  /* Close Icon */
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+  /* Display the modal when isAccountCreationSuccessful is true */
+  .signUp-container.ng-reflect-isAccountCreationSuccessful .confirmation-modal {
+    display: flex;
+  }
+  .error-content {
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    color: red;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  .MovieDetailsDiv ,.paymentDetailsDiv
+  {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom:  1px solid #3180AC;
+  }
+  .MovieDetailsDiv h1,  .promoCodeDetailsDiv h1
+  {
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .MovieDetailsDiv h1 p
+  {
+    font-weight: 600;
+  }
+  .MovieDetailsDiv h1 p span
+  {
+    font-weight: normal;
+  }
+
+  .noCardsExist
+  {
+    font-weight: 800;
+    color: #f62e2e;
+    margin: 10px;
+    padding: 5px;
+  }
+  .promoCodeDetailsDiv
+  {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  
+  /* Loader styles */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader::after {
+  content: '';
+  border: 4px solid #3498db;
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,53 @@
+.nowShowingWrapper
+{
+    margin: 20px;
+    overflow-x: hidden;
+}
+.nowShowingWrapper .col-md-3
+{
+ cursor: pointer;
+ margin-top: 10px;
+}
+.nowShowingPoster
+{
+    width: 230px;
+    height: 310px;
+    border-radius: 5px;
+}
+.nowShowingCards
+{
+    border: 1px solid #3180AC;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 3px 2px #c1d8e6;
+}
+:host ::ng-deep .width24per
+{
+    width: 24%;
+    margin-left: 5px;
+}
+.bookTicketBtn
+{
+    background-color: #3180AC;
+    color: #FFF;
+    padding: 8px 10px;
+    font-weight: 500;
+    border: unset;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.movieInfo
+{
+    margin-top: 10px;
+    text-align: left;
+}
+.movieInfo p
+{
+    margin: 0;
+    font-weight: 600;
+    text-align: left;
+}
+.movieTitle
+{
+    font-weight: 900 !important;
+}

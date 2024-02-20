@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Order Confirmation</h1>
+    <p>Thank you for your order! Here's a summary:</p>
+
+    <div class="order-summary">
+        <p>Movie: <span>{{orderConfirmationData.movie.movieTitle}}</span></p>
+        <p>Show Date: <span>{{orderConfirmationData.show.showDate}}</span></p>
+        <p>Show Time: <span>{{getFormattedShowTime(orderConfirmationData.show.showTime)}}</span></p>
+        <p>Seats Selected: <span>{{ getSeatNumbers(orderConfirmationData.tickets) }}</span></p>
+        <p>Total Price: <span>${{ totalTicketPrice | number:'1.2-2' }} (Inclusive of $2.99 Taxes and $2 Online Charges)</span></p>
+        
+    </div>
+
+    <button class="addBtn" (click)="goHome()">Go to Home Page</button>
+</div>
+<app-footer></app-footer>

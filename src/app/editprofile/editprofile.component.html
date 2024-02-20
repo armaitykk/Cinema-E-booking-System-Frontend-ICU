@@ -1,0 +1,281 @@
+<div class="editProfSection">
+<app-header></app-header>
+    <div class="editProfile">
+        <div class="welcomeMessage">
+            <h2>Hi {{ firstNameUser }} {{ lastNameUser}}!</h2>
+        </div>
+        <form class="formDiv" (ngSubmit)="updateUser()" method="post">
+            <h3>Account Details</h3>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="customerData.email" name="email" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                [(ngModel)]="customerData.password"
+                name="password"
+                [readonly]="!isEditingPassword"
+                (click)="openPasswordChangePopup()"
+              >
+              <!-- <i class="fa fa-pencil"></i>  -->
+            </div>
+         <!-- password-change.component.html -->
+        <div *ngIf="isEditingPassword" class="password-change-popup">
+          <div class="passwordChangeContent">
+            <h2>Change Password</h2>
+            <div class="mb-3">
+              <label for="oldPassword" class="form-label">Old Password</label>
+              <input type="password" class="form-control" id="oldPassword" [(ngModel)]="oldPassword" name="oldPassword">
+            </div>
+            <!-- Error message for incorrect old password -->
+            <div *ngIf="errorMessage" class="error-message">
+              {{ errorMessage }}
+            </div>
+            <!-- Success message for password change -->
+            <div *ngIf="successMessage" class="success-message">
+              {{ successMessage }}
+            </div>
+            <div class="mb-3">
+              <label for="newPassword" class="form-label">New Password</label>
+              <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPassword" name="newPassword">
+              <div *ngIf="passwordForm.get('newPassword')?.invalid && passwordForm.get('newPassword')?.touched" class="error-message">
+                Password must be 8 characters minimum and include at least one letter and one number.
+            </div>
+            </div>
+            <button type="button" (click)="changePassword()" class="paymentBtns">Change Password</button>
+            <button type="button" (click)="closePasswordChangePopup()" class="paymentBtns">Cancel</button>
+          </div>
+        </div>
+
+            
+            
+              
+            <h3>Personal Details</h3>
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="customerData.firstName" name="firstName">
+            </div>
+            <!-- <div class="mb-3">
+              <label for="cardNumber" class="form-label">Card Number</label>
+              <div class="input-group posRel">
+                <input type="password" class="form-control" id="cardNumber" [(ngModel)]="paymentData.cardNumber" name="cardNumber" [readonly]="!isEditing">
+                <span class="edit-icon" (click)="toggleEditing()">&#9998;</span>
+              </div>
+            </div> -->
+            
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="customerData.lastName" name="lastName">
+            </div>
+            <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="contactNumber" [(ngModel)]="customerData.phoneNumber" name="contactNumber">
+            </div>
+            <!-- <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" [(ngModel)]="userData.age" name="age">
+            </div> -->
+            <h3>Payment Cards</h3>
+            <div class="paymentMain">
+              <!-- Display message when there are no cards available -->
+              <div class="noCardsExist" *ngIf="paymentData && paymentData.length === 0">
+                No cards available.
+              </div>
+              <div class="mb-3 paymentCardDiv" *ngFor="let card of paymentData;let i = index">
+                <div class="col-md-12 pad-0">
+                  <p>{{card.cardType}} ending in {{card.cardNumber.slice(-4)}}</p>
+                  <div class="flexBtns">
+                    <button type="button" class="paymentBtns" (click)="toggleCardDetails(i)"><i class="fa fa-pencil"> </i> Edit</button>
+                    <button type="button" class="paymentBtns" (click)="deleteCard(i)"><i class="fa fa-trash-o"> </i> Delete Card</button>
+                  </div>
+                  <div class="cardDetails" *ngIf="showCardDetails[i]">
+                    <div class="cardDetailsContent">
+                      <h2>Edit Payment Information</h2>
+                      <div class="paymentBillingDetails">
+                        <div class="cardDetailsOnly">
+                          <h4>Card Details</h4>
+                          <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Card Number</label>
+                            <input type="number" class="form-control" id="cardNumber" [(ngModel)]="card.cardNumber" name="cardNumber">
+                          </div>
+                          <div class="mb-3">
+                            <label for="CVV" class="form-label">CVV</label>
+                            <input type="password" class="form-control" id="CVV" [(ngModel)]="card.securityNumber" name="CVV">
+                          </div>
+                          <div class="mb-3">
+                            <label for="cardName" class="form-label">Name on Card</label>
+                            <input type="text" class="form-control" id="cardName" [(ngModel)]="card.nameOnCard" name="cardName">
+                          </div>
+                           <!-- Card Type -->
+                           <div class="mb-3 form-group">
+                            <label for="cardType" class="labelTag">Card Type</label>
+                            <select id="cardType" name="cardType" [(ngModel)]="card.cardType" class="form-control">
+                                <option [value]="'Credit'" [selected]="card.cardType === 'Credit'">Credit</option>
+                                <option [value]="'Debit'" [selected]="card.cardType === 'Debit'">Debit</option>
+                            </select>
+                        </div>
+                        
+                          <div class="mb-3">
+                            <label for="cardExpiry" class="form-label">Expiry Date</label>
+                            <input type="text" class="form-control" id="cardExpiry" [(ngModel)]="card.expiryDate" name="cardExpiry" pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$">
+                          </div>
+                        </div>
+                        <div class="billingAddressDetails">
+                          <h4>Billing Address</h4>
+                          <div class="mb-3">
+                              <label for="billStreet" class="form-label">Street</label>
+                              <input type="text" class="form-control" id="billStreet" [(ngModel)]="card.street" name="billStreet">
+                          </div>
+                          <div class="mb-3">
+                            <label for="billCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="billCity" [(ngModel)]="card.city" name="billCity">
+                        </div>
+                        <div class="mb-3">
+                            <label for="billState" class="form-label">State</label>
+                            <input type="text" class="form-control" id="billState" [(ngModel)]="card.state" name="billState">
+                        </div>
+                        <div class="mb-3">
+                          <label for="billZipCode" class="form-label">Zip Code</label>
+                          <input type="number" class="form-control" id="billZipCode" [(ngModel)]="card.zipcode" name="billZipCode">
+                      </div>
+                        </div>
+                      
+                    </div>
+                    <div class="btnsPayment">
+                      <button type="button" class="paymentBtns" (click)="updateCardDetails(i)">Save</button>
+                      <button type="button" (click)="toggleCardDetails(i)" class="paymentBtns">Cancel</button>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="paymentBtns marL0"  (click)="toggleAddCardDetails()" [disabled]="hasReachedCardLimit()"><i class="fa fa-plus"> </i> Add New Payment Card</button>
+              <div class="cardDetails" *ngIf="showAddCardDetails">
+                <div class="cardDetailsContent">
+                  <h2>Add Payment Information</h2>
+                  <form (ngSubmit)="addCardDetails($event)" class="userCardInfoForm" [formGroup]="userCardDetails">
+                    <div class="paymentBillingDetails">
+                      <div class="cardDetailsOnly">
+                        <h4>Card Details</h4>
+                        <div class="mb-3">
+                          <label for="cardNumber" class="form-label">Card Number <sup class="supClass">*</sup></label>
+                          <input type="number" class="form-control" id="cardNumber1" formControlName="cardNumber" name="cardNumber">
+                          <div *ngIf="userCardDetails.get('cardNumber')?.invalid && userCardDetails.get('cardNumber')?.touched" class="error-message">
+                            Card Number is required.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="CVV" class="form-label">CVV <sup class="supClass">*</sup></label>
+                          <input type="password" class ="form-control" id="CVV1" formControlName="securityNumber" name="CVV">
+                          <div *ngIf="userCardDetails.get('securityNumber')?.invalid && userCardDetails.get('securityNumber')?.touched" class="error-message">
+                            CVV is required.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cardName" class="form-label">Name on Card <sup class="supClass">*</sup></label>
+                          <input type="text" class="form-control" id="cardName1" formControlName="nameOnCard" name="cardName">
+                          <div *ngIf="userCardDetails.get('nameOnCard')?.invalid && userCardDetails.get('nameOnCard')?.touched" class="error-message">
+                            Name on Card is required.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cardExpiry" class="form-label">Expiry Date <sup class="supClass">*</sup></label>
+                          <input type="text" class="form-control" id="cardExpiry1" formControlName="expiryDate" name="cardExpiry" 
+                          pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$">
+                          <div *ngIf="userCardDetails.get('expiryDate')?.invalid && userCardDetails.get('expiryDate')?.touched" class="error-message">
+                            Expiry Date is required and must be in MM/YY format.
+                          </div>
+                        </div>
+                        <!-- Card Type -->
+                        <div class="form-group">
+                          <label for="cardType" class="labelTag">Card Type <sup class="supClass">*</sup></label>
+                          <select id="cardTypeinAdd" name="cardType" formControlName="cardType" class="form-control">
+                            <option value="Credit">Credit</option>
+                            <option value="Debit">Debit</option>
+                          </select>
+                          <div *ngIf="userCardDetails.get('cardType')?.invalid && userCardDetails.get('cardType')?.touched" class="error-message">
+                            Please select the type of the card.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="billingAddressDetails">
+                        <h4>Billing Address</h4>
+                        <div class="mb-3">
+                          <label for="billStreet" class="form-label">Street <sup class="supClass">*</sup></label>
+                          <input type="text" class="form-control" id="billStreet1" formControlName="street" name="billStreet">
+                          <div *ngIf="userCardDetails.get('street')?.invalid && userCardDetails.get('street')?.touched" class="error-message">
+                            Street is required.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="billCity" class="form-label">City <sup class="supClass">*</sup></label>
+                          <input type="text" class="form-control" id="billCity1" formControlName="city" name="billCity">
+                          <div *ngIf="userCardDetails.get('city')?.invalid && userCardDetails.get('city')?.touched" class="error-message">
+                            City is required.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="billState" class="form-label">State <sup class="supClass">*</sup></label>
+                          <input type="text" class="form-control" id="billState1" formControlName="state" name="billState">
+                          <div *ngIf="userCardDetails.get('state')?.invalid && userCardDetails.get('state')?.touched" class="error-message">
+                            State is required.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="billZipCode" class="form-label">Zip Code <sup class="supClass">*</sup></label>
+                          <input type="number" class="form-control" id="billZipCode1" formControlName="zipcode" name="billZipCode">
+                          <div *ngIf="userCardDetails.get('zipcode')?.invalid && userCardDetails.get('zipcode')?.touched" class="error-message">
+                            Zip Code is required.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="error-message" *ngIf="showAddCardError">
+                      {{addCardError}}
+                    </div>
+                    <div class="btnsPayment">
+                      <button type="submit" class="paymentBtns">Add</button>
+                      <button type="button" (click)="toggleAddCardDetails()" class="paymentBtns">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              
+          </div>
+            <h3>Address Details</h3>
+            <div class="mb-3">
+                <label for="addressline1" class="form-label">Street</label>
+                <input type="text" class="form-control" id="addressline1" [(ngModel)]="customerData.street" name="addressLine1">
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" [(ngModel)]="customerData.city" name="city">
+            </div>
+            <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" id="state" [(ngModel)]="customerData.state" name="state">
+            </div>
+            <div class="mb-3">
+                <label for="zipcode" class="form-label">Zip Code</label>
+                <input type="text" class="form-control" id="zipcode" [(ngModel)]="customerData.zipcode" name="zipCode">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="customerData.promotionsSubscribed" name="promotions">
+                <label class="form-check-label" for="exampleCheck1" style="margin-left: 5px;">Turn on Promotions</label>
+            </div>
+            <button type="submit" class="saveBtn">Save Changes</button>
+        </form>
+        <div *ngIf="isSaveSuccessful" class="confirmation-modal">
+          <div class="confirmation-content">
+            <span class="close-icon" (click)="closeConfirmationModal()">&times;</span>
+            <h1 class="modalText">Profile updated successfully!</h1>
+          </div>
+        </div>        
+    </div>
+    <app-footer></app-footer>
+    </div>

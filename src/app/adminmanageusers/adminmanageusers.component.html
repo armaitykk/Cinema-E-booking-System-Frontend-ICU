@@ -1,0 +1,116 @@
+<div class="usersList">
+  <div class="row adminHeader">
+    <div class="col-md-6 textAlignL">
+     <h4> Admin List</h4>
+    </div>
+    <div class="col-md-6 textAlignR">
+      <button class="addBtn" routerLink="/admin/adduser">Add New Admin</button>
+    </div>
+    
+  </div>
+  <div class="usersListManage">
+    <div *ngFor="let admin of adminData" class="row">
+      <!-- <div class="col-md-2">
+        <p>{{movie.id}}</p>
+      </div> -->
+      <div class="col-md-4">
+        <p>{{admin.email}}</p>
+      </div>
+      <!-- <div class="col-md-4">
+        <a href="#">Edit</a>
+      </div> -->
+      <!-- <div class="col-md-4">
+        <a (click)="deleteAdmin(admin.userID)">Delete</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="usersList">
+  <div class="row usersHeader">
+    <div class="col-md-6 textAlignL">
+     <h4> Users List</h4>
+    </div>
+  </div>
+  <div class="usersListManage">
+    <div *ngFor="let user of userData" class="row">
+      <div class="col-md-4">
+        <p>{{user.firstName}}</p>
+      </div>
+      <div class="col-md-4">
+        <a (click)="getEditingUserStatus(user.userID)">Activate / Inactivate</a>
+      </div>
+      <!-- <div class="col-md-4">
+        <a (click)="deleteUser(user.userID)">Delete</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+<!--Active User Edit Popup-->
+<div class="editMoviePopup" *ngIf="showActiveUserPopup">
+  <div class="popupOverlay"></div>
+  <div class="popupContent">
+    <div class="addMovieWrapper">
+      <div class="addMovieMain">
+        <div class="addMovie-container"> 
+          <!-- Add Movie Form -->
+          <form (ngSubmit)="suspendUserStatus()" class="addMovieForm">
+            <!-- Change the User Status -->
+            <div class="mb-3">
+              <p>The user is Currently Active</p>
+            </div>
+            <div class="mb-3">
+              <label for="user_status" class="labelTag">Do you want to inactivate the user?</label>
+            </div>
+
+            <div class="btnsWrapper">
+              <!-- Submit Button -->
+              <button type="submit" class="addBtn marR15">Yes</button>
+              <button class="closePopupBtn addBtn" (click)="closeEditUserPopup()">No</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+<!--Inactive User Edit Popup-->
+<div class="editMoviePopup" *ngIf="showInactiveUserPopup">
+  <div class="popupOverlay"></div>
+  <div class="popupContent">
+    <div class="addMovieWrapper">
+      <div class="addMovieMain">
+        <div class="addMovie-container"> 
+          <!-- Add Movie Form -->
+          <form (ngSubmit)="activateUserStatus()" class="addMovieForm">
+            <!-- Change the User Status -->
+            <div class="mb-3">
+              <p>The user is Currently Inactive</p>
+            </div>
+            <div class="mb-3">
+              <label for="user_status" class="labelTag">Do you want to activate the user?</label>
+            </div>
+
+            <div class="btnsWrapper">
+              <!-- Submit Button -->
+              <button type="submit" class="addBtn marR15">Yes</button>
+              <button class="closePopupBtn addBtn" (click)="closeEditUserPopup()">No</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+
+
+
+  
+
+
+
+  

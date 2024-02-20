@@ -1,0 +1,51 @@
+.addMovieWrapper
+{
+    width: 800px;
+    background: #3180ac3d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 5px #f2f7fa;
+    margin: 30px auto;
+}
+.welcomeMessage
+{
+    height: 50px;
+    /* background: radial-gradient(#3180AC, #ffffff); */
+    background: #3180AC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    border-radius: 5px;
+}
+.welcomeMessage h2
+{
+    margin-top: 10px;
+    font-weight: 800;
+}
+.addMovieForm
+{
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+.addBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 10px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.addMovieForm label
+{
+   font-weight: 500;
+}
+.form-check label
+{
+    margin-left: 5px;
+}
+.form-group
+{
+    margin-top: 5px;
+}

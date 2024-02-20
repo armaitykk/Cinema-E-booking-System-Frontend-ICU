@@ -1,0 +1,327 @@
+.editProfile
+{
+    width: 800px;
+    background: #3180ac3d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 5px #f2f7fa;
+    margin: 30px auto;
+}
+.welcomeMessage
+{
+    height: 50px;
+    /* background: radial-gradient(#3180AC, #ffffff); */
+    background: #3180AC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcomeMessage h2
+{
+    margin-bottom: 0;
+}
+.formDiv
+{
+    
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.formDiv label
+{
+   font-weight: 500;
+}
+
+.formDiv h3
+{
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.formDiv .mb-3
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.saveBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 10px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .confirmation-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    height: 180px;
+    display: flex;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  
+  .confirmation-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-text-2 {
+    font-size: 16px;
+  }
+  /* Style for disabled buttons with a specific class */
+  .login-container button:disabled {
+    background-color: #ccc; /* Change the background color */
+    color: #000; /* Change the text color */
+    cursor: not-allowed; /* Change the cursor to indicate it's not clickable */
+  }
+  /* Style for error content */
+.error-content {
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    color: red;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for error modal */
+  .error-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  /* Style for error modal container */
+  .error-modal-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Relative positioning for close button */
+  }
+  
+  /* Style for close button in error modal */
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+  }
+  .modalText
+  {
+    color: #3180AC;
+    margin:auto;
+  }
+  .cardDetails {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  .paymentBtns[disabled] {
+    background-color: #ccc; 
+    color: #3180AC; 
+    cursor: not-allowed; 
+    opacity: 0.9; 
+  }
+
+.cardDetailsContent , .passwordChangeContent
+{
+    color: #3180AC; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 60%;
+    position: relative;
+    margin: auto;
+}
+.btnsPayment
+{
+    display: flex;
+    justify-content: end;
+    
+
+}
+.paymentBillingDetails
+{
+    display: flex;
+    justify-content: space-between;
+}
+.cardDetailsOnly
+{
+    width: 40%;
+}
+.billingAddressDetails
+{
+    width: 45%;
+}
+.noCardsExist
+{
+  padding: 15px;
+  width: 100%;
+  background: #FFF;
+  color: #3180AC;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.pad-0
+{
+    padding: 0;
+}
+.cardDetailsContent h2
+{
+    border-bottom: 1px solid #3180AC;
+    font-weight: 800;
+    margin: 5px;
+    /* padding: 5px; */
+}
+.paymentBillingDetails h4
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.paymentBtns
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 5px 10px;
+    text-align: center;
+    border: unset;
+    margin-left: 15px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+.paymentCardDiv
+{
+    background: #fff;
+    padding: 10px 10px 0px 10px;
+    border-radius: 5px;
+    height: 80px;
+}
+.flexBtns
+{
+    display: flex;
+    justify-content: end;
+}
+.marL0
+{
+    margin-left: 0px;
+}
+.input-group-text .edit-icon {
+    cursor: pointer;
+    color: #007bff; /* Change the color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-left: 5px; /* Add spacing between the input and the icon */
+  }
+  
+  .form-control[readonly] {
+    background-color: #f7f7f7; /* Change the background color for read-only input */
+  }
+  .posRel
+  {
+    position: relative;
+    width: 100%;
+  }
+.edit-icon
+{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+    top: 5px;
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1); 
+}  
+.password-change-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .password-change-popup h2 {
+    margin-top: 0;
+  }
+  
+  .password-change-popup button {
+    margin-top: 10px;
+  }
+  .error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  .error-content {
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    color: red;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .supClass
+  {
+    color: #f62e2e;
+    font-size: 90%;
+    top: -0.3em;
+  }
+  .success-message {
+    color: green; /* Text color for success message */
+    font-weight: bold; /* Make the text bold */
+    margin-top: 10px; /* Add some top margin for spacing */
+  }
+  

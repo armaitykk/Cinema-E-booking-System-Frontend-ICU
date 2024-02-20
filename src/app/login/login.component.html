@@ -1,0 +1,50 @@
+<div class="loginWrapper">
+  <div class="loginMain">
+    <div class="login-container">
+      <div class="logoContainer">
+        <img src="{{ logoImg }}" class="logoImgDiv" alt="Logo">
+      </div>
+      <p class="loginField">Login</p>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="username" class="labelTag">Username <sup class="supClass">*</sup></label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            placeholder="Enter your Username"
+            required
+            #usernameInput="ngModel"
+          >
+          <div *ngIf="loginForm.submitted && usernameInput.invalid" class="error-message">
+            Username is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="labelTag">Password <sup class="supClass">*</sup></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="Enter your Password"
+            required
+            #passwordInput="ngModel"
+          >
+          <div *ngIf="loginForm.submitted && passwordInput.invalid" class="error-message">
+            Password is required.
+          </div>
+        </div>
+        <p class="error-message" *ngIf="isLoginUnsuccessful">{{errorMessage}}</p>
+        <button type="submit" class="login-button" [disabled]="loginForm.invalid">Login</button>
+        <div class="form-group rememberMeDiv">
+          <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe" (change)="onRememberMeChange()">
+          <label for="rememberMe" class="labelTag">Remember Me</label>
+        </div>
+        <a routerLink="/forgot-password" class="forgotPassword"> Forgot Password? Click Here!</a>
+        <a routerLink="/signup" class="noAccountDiv"> Don't have an account? Click here to create</a>
+      </form>
+    </div>
+  </div>
+</div>

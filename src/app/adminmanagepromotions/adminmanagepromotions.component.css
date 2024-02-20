@@ -1,0 +1,36 @@
+.promotionsHeader
+{
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  justify-content: center;
+}
+.textAlignR
+{
+  text-align: right;
+}
+.promotionsHeader h4
+{
+  font-weight: 900;
+  margin-bottom: 0;
+}
+.addBtn
+{
+  color: #FFF;
+  background-color: #3180AC;
+  padding: 10px 15px;
+  text-align: center;
+  border: unset;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.promotionsListManage
+{
+margin-top: 20px;
+}
+.textAlignL
+{
+text-align: left;
+}
+

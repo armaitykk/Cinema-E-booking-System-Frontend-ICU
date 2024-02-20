@@ -1,0 +1,332 @@
+<div class="signUpWrapper" [class.loading]="loading">
+    <div class="signUpMain">
+        <div class="signUp-container">
+            <div class="logoContainer">
+                <img src="{{logoImg}}" class="logoImgDiv">
+            </div>
+            <p class="signUpField">Sign Up</p>
+            <form  (ngSubmit)="signup()" class="signUpForm">
+                <!-- Email -->
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="email" class="labelTag">Email<sup class="supClass">*</sup></label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        formControlName="email"
+                        placeholder="Email@example.com"
+                        required
+                    >
+                    <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error-message">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+
+                <!-- First Name -->
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="firstName" class="labelTag">First Name<sup class="supClass">*</sup></label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        formControlName="firstName"
+                        placeholder="First Name"
+                        required
+                    >
+                    <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched" class="error-message">
+                        Please your First Name.
+                    </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="lastName" class="labelTag">Last Name<sup class="supClass">*</sup></label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        formControlName="lastName"
+                        placeholder="Last Name"
+                        required
+                    >
+                    <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched" class="error-message">
+                        Please your First Name.
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="password" class="labelTag">Create Password <sup class="supClass">*</sup></label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        formControlName="password"
+                        placeholder="Password"
+                        required
+                    >
+                    <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error-message">
+                        Password must be 8 characters minimum and include at least one letter and one number.
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="confirmPassword" class="labelTag">Confirm Password <sup class="supClass">*</sup></label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        formControlName="confirmPassword"
+                        placeholder="Re-enter Password"
+                        required
+                    >
+                    <div *ngIf="signupForm.hasError('passwordMismatch')" class="error-message">
+                        Passwords must match.
+                    </div>
+                </div>
+
+                 <!-- Phone -->
+                 <div class="form-group" [formGroup]="signupForm">
+                    <label for="phoneNumber" class="labelTag">Mobile Number <sup class="supClass">*</sup></label>
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        formControlName="phoneNumber"
+                        placeholder="+XXXXXXXXXXX"
+                        required
+                    >
+                    <div *ngIf="signupForm.get('phoneNumber')?.invalid && signupForm.get('phoneNumber')?.touched" class="error-message">
+                        Please enter a valid phone number (e.g., +1234567890).
+                    </div>
+                </div>
+
+                <div>
+                <!-- Card Number -->
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="cardNumber" class="labelTag">Card Number</label>
+                    <input
+                        type="text"
+                        id="cardNumber"
+                        name="cardNumber"
+                        formControlName="cardNumber"
+                        placeholder="Card Number"
+                    >
+                    <div *ngIf="paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched" class="error-message">
+                        Please enter a valid 16-digit card number.
+                    </div>
+                </div>
+                <!-- Card Type -->
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="cardType" class="labelTag">Card Type</label>
+                    <select class="form-control" id="cardType" name="cardType" formControlName="cardType">
+                      <option value="Credit">Credit</option>
+                      <option value="Debit">Debit</option>
+                    </select>
+                    <div *ngIf="paymentForm.get('cardType')?.invalid && paymentForm.get('cardType')?.touched" class="error-message">
+                      Please select the type of the card.
+                    </div>
+                  </div>
+                  
+
+
+                <!-- CVV -->
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="securityNumber" class="labelTag">CVV</label>
+                    <input
+                        type="password"
+                        id="securityNumber"
+                        name="securityNumber"
+                        formControlName="securityNumber"
+                        placeholder="CVV"
+                    >
+                    <div *ngIf="paymentForm.get('securityNumber')?.invalid && paymentForm.get('securityNumber')?.touched" class="error-message">
+                        Please enter a valid 3-digit CVV.
+                    </div>
+                </div>
+                <!-- Card Expiry -->
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="expiryDate" class="labelTag">Expiry Date of Card</label>
+                    <input
+                        type="text"
+                        id="expiryDate"
+                        name="expiryDate"
+                        formControlName="expiryDate"
+                        placeholder="MM/YY"
+                        pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$"
+                    >
+                    <div *ngIf="paymentForm.get('expiryDate')?.invalid && paymentForm.get('expiryDate')?.touched" class="error-message">
+                        Please enter the expiry date of the card in MM/YY format.
+                    </div>
+                </div>
+
+                <!-- Card Name -->
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="nameOnCard" class="labelTag">Name on the Card</label>
+                    <input
+                        type="text"
+                        id="nameOnCard"
+                        name="nameOnCard"
+                        formControlName="nameOnCard"
+                        placeholder="Name On Card"
+                    >
+                    <div *ngIf="paymentForm.get('nameOnCard')?.invalid && paymentForm.get('nameOnCard')?.touched" class="error-message">
+                        Please enter the name on the card.
+                    </div>
+                </div>
+
+            </div>     
+            
+            
+                <!-- Billing Address Section -->
+                <div>
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="billingAddress" class="labelTag">Billing Address</label>
+                </div>
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="street" class="labelTag">Street</label>
+                    <input 
+                    type="text" 
+                    id="street" 
+                    name="street" 
+                    formControlName="street" 
+                    placeholder="Street">
+                </div>
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="city" class="labelTag">City</label>
+                    <input 
+                    type="text" 
+                    id="city" 
+                    name="city" 
+                    formControlName="city" 
+                    placeholder="City">
+                </div>
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="state" class="labelTag">State</label>
+                    <input 
+                    type="text" 
+                    id="state" 
+                    name="state" 
+                    formControlName="state" 
+                    placeholder="State">
+                </div>
+                <div class="form-group" [formGroup]="paymentForm">
+                    <label for="zipcode" class="labelTag">Zipcode</label>
+                    <input 
+                    type="text" 
+                    id="zipcode" 
+                    name="zipcode" 
+                    formControlName="zipcode" 
+                    placeholder="Zipcode">
+                </div>
+
+                <!-- Shipping Address Section -->
+                <div class="form-group" [formGroup]="signupForm" >
+                    <label class="labelTag"> Address</label>
+                  </div>
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="shippingStreet" class="labelTag">Street</label>
+                    <input 
+                    type="text" 
+                    id="shippingStreet" 
+                    name="shippingStreet" 
+                    formControlName="street" 
+                    placeholder= "Street">
+                </div>
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="shippingCity" class="labelTag">City</label>
+                    <input 
+                    type="text" 
+                    id="shippingCity" 
+                    name="shippingCity" 
+                    formControlName="city" 
+                    placeholder=" City">
+                </div>
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for ="shippingState" class="labelTag">State</label>
+                    <input 
+                    type="text" 
+                    id="shippingState" 
+                    name="shippingState" 
+                    formControlName="state" 
+                    placeholder=" State">
+                </div>
+                <div class="form-group" [formGroup]="signupForm">
+                    <label for="shippingZipcode" class="labelTag">Zipcode</label>
+                    <input 
+                    type="text" 
+                    id="shippingZipcode" 
+                    name="shippingZipcode" 
+                    formControlName="zipcode" 
+                    placeholder="Zipcode">
+                </div>
+
+               </div>
+                <!-- Subscribe Promotions -->
+                <div class="form-group subscribeDiv" [formGroup]="signupForm">
+                    <input type="checkbox" id="promotionsSubscribed" name="promotionsSubscribed" formControlName="promotionsSubscribed">
+                    <label for="promotionsSubscribed" class="labelTag">Subscribe for Promotions</label>
+                </div>
+
+                <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+                <a routerLink="/login" class="alreadyAccount"> Already have an Accoount? Login!</a>
+            </form>
+
+            <!-- Confirmation Modal for Success -->
+            <div *ngIf="isAccountCreationSuccessful" class="confirmation-modal">
+                <div class="confirmation-content">
+                    <span class="close-icon" (click)="closeConfirmationModal()">&times;</span>
+                    <h2 class="confirmation-text">
+                        Account successfully created!
+                    </h2>
+                    <p class="confirmation-text-2">
+                        Please verify your account. Check your email inbox for the Confirmation code.
+                    </p>
+                    <p> Please enter the code sent to your email.</p>
+                    <form (ngSubmit)="submitConfirmationCode()" #confirmationForm="ngForm">
+                    <div class="form-group">
+                        <label for="verificationCode" class="labelTag">Confirmation Code</label>
+                        <input
+                        type="text"
+                        id="verificationCode"
+                        name="verificationCode"
+                        [(ngModel)]="verificationCode"
+                        placeholder="Enter the code"
+                        required
+                        #usernameInput="ngModel"
+                        >
+                        <!-- <div *ngIf="codeValidationError" class="error-message">
+                            Please enter the confirmation code.
+                        </div> -->
+                        <div *ngIf="codeValidationError" class="error-message">
+                            {{verifyError}}
+                            </div>
+                        
+                    </div>
+                    <div class="flexBtns">
+                        <button type="submit" class="login-button">Confirm</button>
+                        <button type="button" class="cancel-button" (click)="closeConfirmationModal()">Cancel</button>
+                    </div>
+                   
+                    </form>
+                </div>
+            </div>
+
+            <!-- Confirmation Modal for Error -->
+            <div *ngIf="isAccountCreationUnsuccessful" class="confirmation-modal">
+                <div class="error-content">
+                    <span class="close-icon" (click)="closeConfirmationModal()">&times;</span>
+                    <h2 class="confirmation-text">
+                        <!-- Error while creating an account! -->
+                        {{registerAccountError}}
+                    </h2>
+                    <!-- <p class="confirmation-text-2">
+                        Please try again.
+                    </p> -->
+                </div>
+            </div>
+            <div class="loader" *ngIf="loading"></div>
+        </div>     
+    </div>
+</div>

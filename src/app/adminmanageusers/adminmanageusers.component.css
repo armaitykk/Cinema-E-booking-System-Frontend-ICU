@@ -1,0 +1,98 @@
+.adminHeader
+{
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  justify-content: center;
+}
+
+.usersHeader
+{
+  border-bottom: 1px solid #eee;
+  /* display: flex; */
+  align-items: center;
+  margin: 0 10px;
+  justify-content: center;
+}
+.textAlignR
+{
+  text-align: right;
+}
+.usersHeader h4, .adminHeader h4
+{
+  font-weight: 900;
+  margin-bottom: 0;
+}
+.addBtn
+{
+  color: #FFF;
+  background-color: #3180AC;
+  padding: 10px 15px;
+  text-align: center;
+  border: unset;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.usersListManage
+{
+margin-top: 20px;
+}
+.textAlignL
+{
+text-align: left;
+}
+.col-md-4 a{
+  cursor: pointer;
+}
+
+
+
+.editMoviePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+.popupContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  width: 30%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 25%;
+    text-align: left;
+}
+
+.btnsWrapper
+{
+  display: flex;
+  margin-top: 15px;
+}
+.marR15
+{
+  margin-right: 15px;
+}
+.addMovieForm .mb-3
+{
+  margin-bottom: 10px;
+}

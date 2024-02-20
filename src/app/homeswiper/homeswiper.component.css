@@ -1,0 +1,92 @@
+@import 'swiper/swiper-bundle.min.css';
+:host{
+.movieSwipper
+{
+    overflow-x: hidden;
+}
+.swiper-pagination {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 100px;
+    height: 20px;
+  }
+
+.swiper-pagination-bullet
+{
+    display: inline-flex ;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+.swiper-pagination-bullet-active
+{
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+    background-color: #3180AC;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+/* Style the swiper container */
+.swiper-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  
+  /* Style individual swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 8px;
+  }
+  
+  
+  /* Add styles for navigation buttons */
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #3180AC;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  
+  .movieBannerImg
+  {
+    width: 100%;
+  border-radius: 5px;
+  height: 340px;
+  }
+
+
+}

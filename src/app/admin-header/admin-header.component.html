@@ -1,0 +1,19 @@
+<div class="headerWrapper">
+    <div class="row">
+        <div class="col-md-2">
+            <img class="headerLogo" src="{{ imageSrc }}" routerLink="/admin/home">
+        </div>
+        <div class="col-md-10 heigth50px">
+            <div class="textalignRight customUserNameDiv">
+                    <div class="dropdown">
+                        <button class="dropbtn" (click)="showDropdownOptions()">Admin <i class="fa fa-caret-down"></i> </button>
+                        <div class="myDropdown" [ngClass]="{'show': isDropdownVisible}" (click)="closeDropdown($event)">
+                          <!-- Dropdown content here -->
+                            <a routerLink="/admin/home">Home</a>
+                            <a (click)="logout()" routerLink="/login">Logout</a> 
+                        </div>
+                      </div>
+            </div>
+        </div>
+    </div>
+</div>

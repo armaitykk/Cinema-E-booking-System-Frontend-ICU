@@ -1,0 +1,17 @@
+<div class="upComingWrapper">
+    <div class="row text-center">
+        <div class="col-md-3 width24per" *ngFor="let movie of movies | filter:searchData">
+            <div class="card upComingCards" *ngIf="movie.playingNow === false" routerLink ="/viewmovieinfo">
+                <div class="imgContainer">
+                    <img src="{{movie.poster_src}}" class="upComingPoster">
+                </div>
+                <div class="movieInfo">
+                    <p class="movieTitle">{{movie.movieTitle}}</p>
+                    <p class="movieReleaseDate">Release Date: <span>{{movie.showTime | date: "yyyy-MM-dd"}}</span></p>
+                    <p class="movieRating"> Rating: <span>{{movie.rating}} </span> / 10</p>
+                    <!-- <button class="bookTicketBtn">Book Ticket</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

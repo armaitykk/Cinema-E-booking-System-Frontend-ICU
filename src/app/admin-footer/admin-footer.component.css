@@ -1,0 +1,25 @@
+.footerWrapper
+{
+    /* position: relative; */
+    /* bottom: 0; */
+    background-color: #3180AC;
+    height: 60px;
+    width: 100%;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+.footerMain
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.footerText
+{
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}

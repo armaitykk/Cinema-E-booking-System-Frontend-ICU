@@ -1,0 +1,31 @@
+
+::ng-deep mat-dialog-container {
+    position: fixed; /* Fixed positioning to make it a popup */
+    top: 50%; /* Center vertically */
+    /* left: 50%; */
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+    z-index: 1000; /* Adjust z-index as needed */
+    position: relative;
+  }
+
+  ::ng-deep .mat-dialog-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 999; /* Adjust z-index to be below the dialog */
+  }
+
+  ::ng-deep .modal-content {
+    padding: 20px; /* Add padding as needed */
+    background-color: #fff; /* Background color of the modal content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+  }
+  ::ng-deep .closeIconImg
+  {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+  

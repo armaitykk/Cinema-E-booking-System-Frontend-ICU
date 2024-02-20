@@ -1,0 +1,30 @@
+<div class="loginWrapper">
+    <div class="loginMain">
+      <div class="login-container">
+        <div class="logoContainer">
+          <img src="{{ logoImg }}" class="logoImgDiv" alt="Logo">
+        </div>
+        <p class="loginField">Email Confirmation</p>
+        <p> Please enter the code sent to your email.</p>
+        <form (ngSubmit)="submitConfirmationCode()" #confirmationForm="ngForm">
+          <div class="form-group">
+            <label for="emailCode" class="labelTag">Confirmation Code</label>
+            <input
+              type="text"
+              id="emailCode"
+              name="emailCode"
+              [(ngModel)]="emailCode"
+              placeholder="Enter the code"
+              required
+              #usernameInput="ngModel"
+            >
+            <div *ngIf="confirmationForm.submitted" class="error-message">
+              Confirmation code is required.
+            </div>
+          </div>
+          <button type="submit" class="login-button">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,25 @@
+<app-admin-header></app-admin-header>
+<div class="adminHomeWrapper">
+  <div class="adminHomeMain">
+    <div class="adminNavigation">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" [class.active]="activeTab === 'Movies'" (click)="setActiveTab('Movies')">
+            <a>Movies</a>
+          </li>
+          <li class="breadcrumb-item" [class.active]="activeTab === 'Users'" (click)="setActiveTab('Users')">
+            <a>Users</a>
+          </li>
+          <li class="breadcrumb-item" [class.active]="activeTab === 'Promotions'" (click)="setActiveTab('Promotions')">
+            <a>Promotions</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <app-adminmanagemovies *ngIf="activeTab === 'Movies'"></app-adminmanagemovies>
+    <app-adminmanageusers *ngIf="activeTab === 'Users'"></app-adminmanageusers>
+    <app-adminmanagepromotions *ngIf="activeTab === 'Promotions'"></app-adminmanagepromotions>
+  </div>
+</div>
+<app-admin-footer></app-admin-footer>

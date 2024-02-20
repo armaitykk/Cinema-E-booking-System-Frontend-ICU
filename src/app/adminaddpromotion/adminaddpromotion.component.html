@@ -1,0 +1,96 @@
+<app-admin-header></app-admin-header>
+<div class="addUserWrapper" [class.loading]="loading">
+    <div class="addUserMain">
+      <div class="addUser-container">
+        <!-- Welcome Admin Message -->
+        <div class="welcomeMessage">
+            <h2>Hi, Admin!</h2>
+        </div>
+       
+  
+        <!-- Add Promotion Form -->
+        <form (ngSubmit)="addNewPromotion()" class="addUserForm">
+
+          <!-- Promotion Code -->
+          <div class="form-group" [formGroup]="addPromoForm">
+            <label for="promotionCode" class="labelTag">Promotion Code</label>
+            <input class="form-control"
+              type="text"
+              id="promotionCode"
+              name="promotionCode"
+              formControlName="promoCode"
+              placeholder="Add New Promotion Code"
+              required >
+          </div>
+          <!-- Promotion description -->
+                    <div class="form-group" [formGroup]="addPromoForm">
+                      <label for="promotionName" class="labelTag">Promotion Description</label>
+                      <input class="form-control"
+                        type="text"
+                        id="promotionName"
+                        name="promotionName"
+                        formControlName="promoDescription"
+                        placeholder="Enter Promotion Description"
+                        required >
+                    </div>
+  
+          <!-- Availability Start Date -->
+          <div class="form-group" [formGroup]="addPromoForm">
+            <label for="startDate" class="labelTag">Starts From</label>
+            <input class="form-control"
+              type="date"
+              id="startDate"
+              name="startDate"
+              formControlName="startDate"
+              placeholder="Start Date"
+            required>
+          </div>
+          <!-- Availability End Date -->
+          <div class="form-group" [formGroup]="addPromoForm">
+            <label for="endDate" class="labelTag">End on</label>
+            <input class="form-control"
+              type="date"
+              id="endDate"
+              name="endDate"
+              formControlName="endDate"
+              placeholder="End Date"
+            required>
+          </div>
+          <!-- Discount Applied -->
+          <div class="form-group" [formGroup]="addPromoForm">
+            <label for="discountApplied" class="labelTag">Discount Applied</label>
+            <input class="form-control"
+              type="number"
+              id="discountApplied"
+              name="discountApplied"
+              formControlName="discountApplied"
+              placeholder="Discount Applied"
+            required>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="addBtn">Add Promotion</button>
+        </form>
+      </div>
+      <div *ngIf="promoAlreadyExistsPop" class="error-modal">
+        <div class="error-content">
+          <span class="close-icon" (click)="closeErrorModal()">&times;</span>
+          <h2 class="error-text">
+            Add Promotion failed!
+          </h2>
+          <p class="error-text-2">
+           {{promoErrorMessage}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="loader" *ngIf="loading"></div>
+  </div>
+  <app-admin-footer></app-admin-footer>
+  
+  
+  
+  
+  
+  
+  

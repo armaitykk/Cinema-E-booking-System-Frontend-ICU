@@ -1,0 +1,19 @@
+<div class="swiper-container movieSwipper" [swiper]="config">
+  <div class="swiper-wrapper movieSwipperWrapper">
+    <div class="swiper-slide" *ngFor="let movie of movieList">
+      <!-- Image that the user clicks -->
+      <img class="movieBannerImg" src="{{movie.bannerSrc}}" (click)="openIframeDialog(movie)">
+      
+      <!-- Iframe with the trailer source directly from movie.trailer_src
+      <iframe *ngIf="movie.showIframe" width="560" height="315" [src]="getIframeUrl(movie)" frameborder="0" allowfullscreen></iframe> -->
+
+    </div>
+  </div>
+
+  <!-- Add Pagination -->
+  <div class="swiper-pagination PaginationStyles"></div>
+
+  <!-- Add Navigation Buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>

@@ -1,0 +1,37 @@
+<div class="promotionsList">
+  <div class="row promotionsHeader">
+    <div class="col-md-6 textAlignL">
+     <h4> Promotions List</h4>
+    </div>
+    <div class="col-md-6 textAlignR">
+      <button class="addBtn" routerLink = "/admin/addpromotion">Add Promotion</button>
+    </div>
+    
+  </div>
+  <div class="promotionsListManage">
+    <div class="row" *ngFor="let promo of promosList">
+      <!-- <div class="col-md-2">
+        <p>{{movie.id}}</p>
+      </div> -->
+      <div class="col-md-3">
+        <p>{{promo.promoCode}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{promo.promoDescription}}</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{promo.endDate}}</p>
+      </div>
+      <!-- <div class="col-md-4">
+        <a routerLink="/admin/home">Edit</a>
+      </div> -->
+      <div class="col-md-3">
+        <a (click)="deletePromotion(promo.promoId)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  

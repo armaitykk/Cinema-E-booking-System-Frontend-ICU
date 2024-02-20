@@ -1,0 +1,28 @@
+<div class="movieListWrapper">
+    <div class="navigationWrapper">
+        <div class="movieCategory">
+            <button class="categoryBtn" (click)="setActiveCategory('nowPlaying')" [class.active]="activeCategory === 'nowPlaying'">Now Playing</button>
+            <button class="categoryBtn" (click)="setActiveCategory('upcoming')" [class.active]="activeCategory === 'upcoming'">Upcoming Movies</button>
+        </div>        
+        <div class="searchWrapper">
+            <div class="searchBar">
+                <img src="{{searchLogo}}" class="searchImg">
+                <input class="searchText" type="text" placeholder="Search Movies" [(ngModel)]="searchText" (change)="changedSearchText()">
+                
+                <!-- <span >Search Movies</span> -->
+            </div>
+            <button class="searchBtn">Search</button>
+        </div>
+        <div class="filterWrapper">
+            <img src="{{filterLogo}}" class="filterImg">
+            <span style="margin-left: 5px;">Filter</span>
+        </div>
+    </div>
+</div>
+
+<app-nowshowinglist *ngIf="activeCategory === 'nowPlaying'" [movies]="getNowShowingMovies()"></app-nowshowinglist>
+<app-upcominglist *ngIf="activeCategory === 'upcoming'" [movies]="getUpcomingMovies()"></app-upcominglist>
+
+
+
+

@@ -1,0 +1,148 @@
+.addUserWrapper
+{
+    width: 800px;
+    background: #3180ac3d;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 5px #f2f7fa;
+    margin: 30px auto;
+}
+.welcomeMessage
+{
+    height: 50px;
+    /* background: radial-gradient(#3180AC, #ffffff); */
+    background: #3180AC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    border-radius: 5px;
+}
+.welcomeMessage h2
+{
+    margin-top: 10px;
+    font-weight: 800;
+}
+.addUserForm
+{
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+.addBtn
+{
+    color: #FFF;
+    background-color: #3180AC;
+    padding: 10px 15px;
+    text-align: center;
+    border: unset;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.addUserForm label
+{
+   font-weight: 500;
+}
+.form-check label
+{
+    margin-left: 5px;
+}
+.form-group
+{
+    margin-top: 5px;
+}
+.confirmation-text-2 {
+    font-size: 16px;
+  }
+  /* Style for disabled buttons with a specific class */
+  .login-container button:disabled {
+    background-color: #ccc; /* Change the background color */
+    color: #000; /* Change the text color */
+    cursor: not-allowed; /* Change the cursor to indicate it's not clickable */
+  }
+  /* Style for error content */
+.error-content {
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    color: red;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for error modal */
+  .error-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  /* Style for error modal container */
+  .error-modal-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Relative positioning for close button */
+  }
+  
+  /* Style for close button in error modal */
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+  }
+  
+  /* Additional styles for error message text */
+  .error-message-text {
+    color: #ff0000;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .error-text-2
+  {
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  
+  /* Loader styles */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader::after {
+  content: '';
+  border: 4px solid #3498db;
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
