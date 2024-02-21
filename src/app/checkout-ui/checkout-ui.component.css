@@ -31,6 +31,13 @@
   background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
 }
 
+.orderDetailsDiv {
+  padding: 10px;
+  border: 1px solid #ccc; /* Adjusted border color */
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+}
+
 /* Buttons Section */
 .text-center {
   text-align: center;

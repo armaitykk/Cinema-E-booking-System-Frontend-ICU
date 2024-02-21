@@ -1,4 +1,4 @@
-<app-header></app-header>
+
   <div class="checkoutContainerMain" [class.loading]="loading">
     <form>
       <div class="container">
@@ -14,7 +14,7 @@
             </div>
           </div>
 
-          <!-- Payment and Promotion Column -->
+          <!-- Payment Methods Column -->
           <div class="col-md-6">
             <div class="paymentDetailsDiv">
               <div class="flexBtns">
@@ -26,11 +26,43 @@
             </div>
           </div>
         </div>
-        <!-- Gap between sections -->
-        <div class="row mt-4"></div>
-        <div class="row">
+        
+        <!-- Order Details Section -->
+        <div class="row mt-4">
+          <!-- Order Details Column -->
+          <div class="col-md-6">
+            <div class="orderDetailsDiv">
+              <div class="flexBtns">
+                <h1>Order Details</h1>
+                <div class="orderItem">
+                  <p>Adult Ticket (x1)</p>
+                  <p>$10.00</p>
+                </div>
+                <div class="orderItem">
+                  <p>Child Ticket (x1)</p>
+                  <p>$5.00</p>
+                </div>
+                <div class="orderItem">
+                  <p>Service Fee                                                                $2.00</p>
+                </div>
+                <div class="orderItem">
+                  <p>Online Fees</p>
+                  <p>$2.00</p>
+                </div>
+                <div class="orderItem">
+                  <p>Sales Tax (7%)</p>
+                  <p>$0.98</p>
+                </div>
+                <div class="orderTotal">
+                  <h2>Total</h2>
+                  <h2>$20.98</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <!-- Promo Code Section -->
-          <div class="col-md-6 offset-md-3">
+          <div class="col-md-6">
             <div class="paymentDetailsDiv">
               <div class="flexBtns">
                 <h1>Promo Code</h1>
@@ -53,6 +85,7 @@
             </div>
           </div>
         </div>
+
         <!-- Confirm and Cancel Order Buttons -->
         <div class="row mt-5">
           <div class="col-md-12 text-center">
