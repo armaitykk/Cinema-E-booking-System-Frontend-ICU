@@ -1,25 +1,23 @@
-.editProfile {
-  width: 800px;
-  background: #ffffff;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px 5px #f2f7fa;
-  margin: 30px auto;
-  padding: 20px;
+h2 {
+  padding-top: 25px;
+  color: white;
+  text-align: center;
 }
 
-.welcomeMessage {
-  height: 50px;
-  /*background: linear-gradient(to bottom, #4B0082, #000000);*/
-  background: #d9c2ea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+  background: linear-gradient(to bottom, #4B0082, #000000); /* Gradient background */
+  width: 100%;
 }
 
 .formDiv {
-  width: 60%;
-  margin: auto;
-  margin-top: 20px;
+  width: 40%;
+  margin: 0 auto; 
+  margin-top: 30px; 
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  margin-bottom: 30px;
 }
 
 .formDiv h3 {
@@ -38,7 +36,8 @@
   text-align: center;
   border: none;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin: 0 auto;
+  display: block;
 }
 
 .saveBtn:hover{
