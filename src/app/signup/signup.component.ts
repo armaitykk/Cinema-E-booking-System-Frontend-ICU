@@ -23,7 +23,7 @@ function passwordMatchValidator(control: AbstractControl): { [key: string]: bool
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  logoImg = '../assets/img/webLogo.png';
+  logoImg = '../assets/img/Logo-SE.jpeg';
   signupForm: FormGroup;
   paymentForm: FormGroup;
   finalFormData : FormGroup;

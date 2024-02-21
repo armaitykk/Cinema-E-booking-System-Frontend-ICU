@@ -11,7 +11,7 @@ import { appApiServices } from '../services/app.services';
 })
 export class ForgotpasswordComponent implements OnInit {
 
-  logoImg = '../assets/img/webLogo.png';
+  logoImg = '../assets/img/Logo-SE.jpeg';
   forgotPasswordForm: FormGroup;
   // customerDataForm : FormGroup;
   isAccountCreationSuccessful: boolean = false;

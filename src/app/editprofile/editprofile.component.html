@@ -2,7 +2,7 @@
 <app-header></app-header>
     <div class="editProfile">
         <div class="welcomeMessage">
-            <h2>Hi {{ firstNameUser }} {{ lastNameUser}}!</h2>
+            <h2>Hello {{ firstNameUser }} {{ lastNameUser}}!</h2>
         </div>
         <form class="formDiv" (ngSubmit)="updateUser()" method="post">
             <h3>Account Details</h3>
@@ -21,7 +21,6 @@
                 [readonly]="!isEditingPassword"
                 (click)="openPasswordChangePopup()"
               >
-              <!-- <i class="fa fa-pencil"></i>  -->
             </div>
          <!-- password-change.component.html -->
         <div *ngIf="isEditingPassword" class="password-change-popup">
@@ -59,13 +58,7 @@
                 <label for="firstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstName" [(ngModel)]="customerData.firstName" name="firstName">
             </div>
-            <!-- <div class="mb-3">
-              <label for="cardNumber" class="form-label">Card Number</label>
-              <div class="input-group posRel">
-                <input type="password" class="form-control" id="cardNumber" [(ngModel)]="paymentData.cardNumber" name="cardNumber" [readonly]="!isEditing">
-                <span class="edit-icon" (click)="toggleEditing()">&#9998;</span>
-              </div>
-            </div> -->
+           
             
             <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
@@ -75,10 +68,7 @@
                 <label for="contactNumber" class="form-label">Contact Number</label>
                 <input type="tel" class="form-control" id="contactNumber" [(ngModel)]="customerData.phoneNumber" name="contactNumber">
             </div>
-            <!-- <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" [(ngModel)]="userData.age" name="age">
-            </div> -->
+         
             <h3>Payment Cards</h3>
             <div class="paymentMain">
               <!-- Display message when there are no cards available -->

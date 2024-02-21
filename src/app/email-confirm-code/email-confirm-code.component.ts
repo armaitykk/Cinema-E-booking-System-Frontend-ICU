@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./email-confirm-code.component.css']
 })
 export class EmailConfirmCodeComponent implements OnInit {
-  logoImg: string = '../assets/img/webLogo.png';
+  logoImg: string = '../assets/img/Logo-SE.jpeg';
   emailCode: number | undefined;
   email: string = '';
 

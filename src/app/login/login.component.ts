@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
   @ViewChild('loginForm') loginForm!: NgForm;
 
-  logoImg = '../assets/img/webLogo.png';
+  logoImg = '../assets/img/Logo-SE.jpeg';
   username: string = '';
   password: string = '';
   isLoginSuccessful: boolean = false;

@@ -16,7 +16,7 @@ import { AuthService } from '../services/auth.service';
 export class AdminLoginComponent {
   @ViewChild('loginForm') loginForm!: NgForm; // Reference to the form
 
-  logoImg = '../assets/img/webLogo.png';
+  logoImg = '../assets/img/Logo-SE.jpeg';
   username: string = '';
   password: string = '';
   errorMessage : string = '';

@@ -10,7 +10,7 @@ import { appApiServices } from '../services/app.services';
   styleUrls: ['./adminaddmovie.component.css']
 })
 export class AdminaddmovieComponent implements OnInit {
-  logoImg = '../assets/img/webLogo.png';
+  logoImg = '../assets/img/Logo-SE.jpeg';
   movieForm: FormGroup;
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private appService: appApiServices) {
     this.movieForm = this.fb.group({

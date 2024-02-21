@@ -28,29 +28,29 @@ import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'forgot-password', component: ForgotpasswordComponent },
-  { path: 'resetPassword', component: ResetpasswordComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'email-confirmation', component: EmailConfirmCodeComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, //can view
+  { path: 'login', component: LoginComponent }, //can view
+  { path: 'forgot-password', component: ForgotpasswordComponent }, //can view
+  { path: 'resetPassword', component: ResetpasswordComponent }, //can view
+  { path: 'home', component: HomeComponent }, //can view
+  { path: 'email-confirmation', component: EmailConfirmCodeComponent }, //can view
+  { path: 'signup', component: SignupComponent }, //can view
   { path: 'viewmovieinfo/:title', component: ViewmovieinfoComponent },
   { path: 'buy-tickets/:title', component: BuyTicketsComponent },
-  { path: 'checkout', component: CheckoutUiComponent },
-  { path: 'order-summary', component: OrderSummaryComponent },
-  { path: 'order-confirmation', component: OrderConfirmationComponent },
-  { path: 'edit-profile', component: EditprofileComponent  },
-  { path: 'booking-history', component: BookingHistoryComponent  },
-  { path: 'admin/login', component: AdminLoginComponent  },
-  { path: 'admin/addmovie', component: AdminaddmovieComponent  },
-  { path: 'admin/adduser', component: AdminadduserComponent  },
-  { path: 'admin/addpromotion', component: AdminaddpromotionComponent  },
-  { path: 'admin/home', component: AdminhomeComponent ,canActivate: [AuthGuard] },
-  { path: 'admin/manage/movies', component: AdminmanagemoviesComponent  },
-  { path: 'admin/deletemovies', component: AdmindeletemovieComponent  },
-  { path: 'admin/manage/users', component: AdminmanageusersComponent  },
-  { path: 'admin/manage/promotions', component: AdminmanagepromotionsComponent  },
+  { path: 'checkout', component: CheckoutUiComponent }, //can view
+  { path: 'order-summary', component: OrderSummaryComponent }, //can view
+  { path: 'order-confirmation', component: OrderConfirmationComponent }, //can view
+  { path: 'edit-profile', component: EditprofileComponent  }, //can view
+  { path: 'booking-history', component: BookingHistoryComponent  }, //can view
+  { path: 'admin/login', component: AdminLoginComponent  }, //can view
+  { path: 'admin/addmovie', component: AdminaddmovieComponent  }, //can view
+  { path: 'admin/adduser', component: AdminadduserComponent  }, //can view
+  { path: 'admin/addpromotion', component: AdminaddpromotionComponent  }, //can view
+  { path: 'admin/home', component: AdminhomeComponent ,/*canActivate: [AuthGuard]*/ }, //can view, take out ",canActivate: [AuthGuard]"
+  { path: 'admin/manage/movies', component: AdminmanagemoviesComponent  }, //can view
+  { path: 'admin/deletemovies', component: AdmindeletemovieComponent  }, //can view (just shows "admindeletemovie works!")
+  { path: 'admin/manage/users', component: AdminmanageusersComponent  }, //can view
+  { path: 'admin/manage/promotions', component: AdminmanagepromotionsComponent  }, //can view
 ];
 
 @NgModule({

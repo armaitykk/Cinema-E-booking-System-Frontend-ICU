@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditprofileComponent implements OnInit {
   // Define your properties for user data, payment data, etc.
-  imageSrc = '../assets/img/webLogo.png';
+  imageSrc = '../assets/img/Logo-SE.jpeg';
   userData: any;
   customerData: any;
   paymentData: any;

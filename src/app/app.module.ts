@@ -18,7 +18,7 @@ import { DataSharingService } from './data-sharing.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {appApiServices} from './services/app.services';
+import { appApiServices} from './services/app.services';
 import { IframeModalComponent } from './iframe-modal/iframe-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

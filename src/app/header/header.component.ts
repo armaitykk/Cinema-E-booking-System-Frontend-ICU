@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  imageSrc = '../assets/img/webLogo.png';
+  imageSrc = '../assets/img/Logo-SE.jpeg';
   loggedIn: any;
   userFirstName: string = '';
   showDropdown: boolean = false;

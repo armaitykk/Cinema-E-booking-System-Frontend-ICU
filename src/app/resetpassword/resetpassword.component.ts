@@ -28,7 +28,7 @@ function passwordMatchValidator(control: FormGroup): { [key: string]: boolean } 
   styleUrls: ['./resetpassword.component.css']
 })
 export class ResetpasswordComponent implements OnInit {
-  logoImg = '../assets/img/webLogo.png';
+  logoImg = '../assets/img/Logo-SE.jpeg';
   signupForm: FormGroup;
   isResetSuccessful: boolean = false;
 
