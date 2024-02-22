@@ -2,20 +2,18 @@
 {
     width: 800px;
     background: #3180ac3d;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 5px #f2f7fa;
-    margin: 30px auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 80px;
 }
 .welcomeMessage
 {
     height: 50px;
-    /* background: radial-gradient(#3180AC, #ffffff); */
-    background: #3180AC;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .welcomeMessage h2
 {
@@ -27,15 +25,17 @@
     margin: 0 20px;
     margin-bottom: 20px;
 }
-.addBtn
+.addButton
 {
     color: #FFF;
-    background-color: #3180AC;
+    background-color: #4B0082;
     padding: 10px 15px;
     text-align: center;
     border: unset;
     border-radius: 10px;
     margin-bottom: 15px;
+    margin: 0 auto;
+    display: block;
 }
 .addMovieForm label
 {
@@ -48,4 +48,16 @@
 .form-group
 {
     margin-top: 5px;
+}
+
+.addMovie-container {
+    border-radius: 5px;
+    background: #e2d2ee;
+    box-shadow: 2px 2px 2px 2px #d8c9e4;
+    margin: 30px auto;
+}
+
+.addMovieMain {
+    padding-bottom: 80px;
+    background-color: white;
 }

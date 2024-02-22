@@ -1,18 +1,15 @@
 <div class="moviesList">
   <div class="row movieHeader">
-    <div class="col-md-6 textAlignL">
+    <div class="col-md-6 leftText">
      <h4> Movies List</h4>
     </div>
-    <div class="col-md-6 textAlignR">
-      <button class="addBtn" routerLink = "/admin/addmovie">Add Movie</button>
+    <div class="col-md-6 rightText">
+      <button class="addButton" routerLink = "/admin/addmovie">Add Movie</button>
     </div>
     
   </div>
   <div class="moviesListManage">
     <div class="row" *ngFor="let movie of movieList">
-      <!-- <div class="col-md-2">
-        <p>{{movie.id}}</p>
-      </div> -->
       <div class="col-md-3">
         <p>{{movie.movieTitle}}</p>
       </div>
@@ -44,8 +41,7 @@
                 type="text"
                 id="movieTitle"
                 name="movieTitle"
-                [(ngModel)]="movieFormData.movieTitle" 
-              >
+                [(ngModel)]="movieFormData.movieTitle" >
               
             </div>
     
@@ -56,8 +52,7 @@
                 type="text"
                 id="movieCast"
                 name="movieCast"
-                [(ngModel)]="movieFormData.movieCast"
-              >
+                [(ngModel)]="movieFormData.movieCast">
             </div>
     
             <!-- Movie Category -->
@@ -67,8 +62,7 @@
                 type="text"
                 id="movieCategory"
                 name="movieCategory"
-                [(ngModel)]="movieFormData.movieCategory"
-              >
+                [(ngModel)]="movieFormData.movieCategory">
             </div>
     
             <!-- Movie Director -->
@@ -78,8 +72,7 @@
                 type="text"
                 id="movieDirector"
                 name="movieDirector"
-                [(ngModel)]="movieFormData.movieDirector"
-              >
+                [(ngModel)]="movieFormData.movieDirector">
             </div>
     
             <!-- Movie Producer -->
@@ -89,19 +82,16 @@
                 type="text"
                 id="movieProducer"
                 name="movieProducer"
-                [(ngModel)]="movieFormData.movieProducer"
-              >
+                [(ngModel)]="movieFormData.movieProducer">
             </div>
     
 <!-- Show Time -->
 <div class="mb-3">
   <label for="showTime" class="labelTag">Show Times</label>
   <ng-container *ngFor="let show of movieShowsScheduled; let i = index">
-    <!-- Display date only if it's different from the previous date -->
     <ng-container *ngIf="i === 0 || show.showDate !== movieShowsScheduled[i - 1]?.showDate">
       <p class="showDateP">{{ show.showDate }}</p>
     </ng-container>
-    
     <div class="side-by-side">
       <div class="flexBtns">
         <span *ngIf="!isEditingShowTime">{{ getFormattedShowTime(show.showTime) }}</span>
@@ -124,12 +114,6 @@
     </div>
   </ng-container>
 </div>
-
-
-
-
-
-
     
             <!-- Release Date -->
             <div class="mb-3">

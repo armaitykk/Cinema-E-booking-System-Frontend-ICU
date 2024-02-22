@@ -9,8 +9,7 @@
 .welcomeMessage
 {
     height: 50px;
-    /* background: radial-gradient(#3180AC, #ffffff); */
-    background: #3180AC;
+    background: #4B0082;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +29,7 @@
 .addBtn
 {
     color: #FFF;
-    background-color: #3180AC;
+    background-color: #4B0082;
     padding: 10px 15px;
     text-align: center;
     border: unset;
@@ -134,7 +133,7 @@
 
 .loader::after {
   content: '';
-  border: 4px solid #3498db;
+  border: 4px solid #4B0082;
   border-radius: 50%;
   border-top: 4px solid #fff;
   width: 30px;

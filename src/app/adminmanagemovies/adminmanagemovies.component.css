@@ -6,7 +6,7 @@
     margin: 0 10px;
     justify-content: center;
   }
-  .textAlignR
+  .rightText
   {
     text-align: right;
   }
@@ -15,10 +15,10 @@
     font-weight: 900;
     margin-bottom: 0;
   }
-  .addBtn
+  .addButton
 {
     color: #FFF;
-    background-color: #3180AC;
+    background-color: #4B0082;
     padding: 10px 15px;
     text-align: center;
     border: unset;
@@ -29,22 +29,17 @@
 {
   margin-top: 20px;
 }
-.textAlignL
+.leftText
 {
   text-align: left;
 }
 
-  
-  
-  
-  
   .manageMoviesButton-container .form-group {
     text-align: left;
   }
 
-  
   .manageMoviesButton-container button {
-    background-color: #3180AC;
+    background-color: #4B0082;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -53,9 +48,9 @@
   }
   
   .manageMoviesButton-container button:hover {
-    background-color: #3180AC;
+    background-color: #4B0082;
   }
-  .col-md-3 a
+  .listItem a
   {
     cursor: pointer;
   }
@@ -146,7 +141,7 @@
 }
 .showTimeBtns i
 {
-  color: #3180AC;
+  color: #4B0082;
 }
 .confirmation-text-2 {
   font-size: 16px;

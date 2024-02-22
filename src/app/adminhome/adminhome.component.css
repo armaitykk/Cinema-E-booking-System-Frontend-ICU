@@ -16,14 +16,7 @@
     width: 380px;
     display: inline-block;
   }
-  .breadcrumb-item a
-  {
-    color: #000;
-  }
-  .breadcrumb-item.active a
-  {
-    color: #3180AC;
-  }
+  
   .movieHeader
   {
     border-bottom: 1px solid #eee;
@@ -44,7 +37,7 @@
   .addBtn
 {
     color: #FFF;
-    background-color: #3180AC;
+    background-color: #4B0082;
     padding: 10px 15px;
     text-align: center;
     border: unset;
@@ -59,12 +52,31 @@
 {
   text-align: left;
 }
-.breadcrumb-item a
-{
-  cursor: pointer;
+
+
+.tab {
+  overflow: hidden;
+  background-color: #ffffff;
 }
-  
-  
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+
+.tab button:hover {
+  background-color: #e3cef2;
+}
+
+.tab button.active {
+  background-color: #c8a6e1;
+}
   
   .adminHomeButton-container .form-group {
     text-align: left;
@@ -72,7 +84,7 @@
 
   
   .adminHomeButton-container button {
-    background-color: #3180AC;
+    background-color: #4B0082;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -81,6 +93,6 @@
   }
   
   .adminHomeButton-container button:hover {
-    background-color: #3180AC;
+    background-color: #4B0082;
   }
   

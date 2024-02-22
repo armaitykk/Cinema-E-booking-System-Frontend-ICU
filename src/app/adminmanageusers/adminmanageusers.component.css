@@ -10,12 +10,11 @@
 .usersHeader
 {
   border-bottom: 1px solid #eee;
-  /* display: flex; */
   align-items: center;
   margin: 0 10px;
   justify-content: center;
 }
-.textAlignR
+.rightText
 {
   text-align: right;
 }
@@ -24,11 +23,12 @@
   font-weight: 900;
   margin-bottom: 0;
 }
-.addBtn
+.addButton
 {
   color: #FFF;
-  background-color: #3180AC;
+  background-color: #4B0082;
   padding: 10px 15px;
+  margin: 10px;
   text-align: center;
   border: unset;
   border-radius: 10px;
@@ -38,15 +38,13 @@
 {
 margin-top: 20px;
 }
-.textAlignL
+.leftText
 {
 text-align: left;
 }
 .col-md-4 a{
   cursor: pointer;
 }
-
-
 
 .editMoviePopup {
   position: fixed;
