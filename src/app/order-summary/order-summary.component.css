@@ -1,69 +1,91 @@
-.container {
-    font-family: 'Roboto', sans-serif; /* Using Roboto font for consistency */
+h2 {
+    padding-top: 25px;
+    color: #4B0082;
+    text-align: center; /* Center align the text */
+}
+
+.bigcontainer {
+    background: linear-gradient(to bottom, #4B0082, #000000);
+    width: 100%;
+    margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 40px auto; /* Giving a bit more space on top and bottom */
-    background-color: #fff; /* White background */
-    border-radius: 10px; /* Rounded corners */
 }
 
-h1 {
-    font-weight: 500;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+.container {
+    background: #fff;
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.container div {
-    padding: 10px 0; /* A bit of vertical padding for better spacing */
+.formDiv {
+    width: 100%;
+    background-color: rgba(75, 0, 130, 0.5); /* Transparent purple background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.order-summary-title {
+    text-align: center;
+    color: black;
+}
+.formDiv h3 {
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.formDiv .mb-3 {
+    margin: 10px 0;
 }
 
 button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    border: none; /* Removing default borders */
-    border-radius: 5px; /* Rounded corners for buttons */
-    transition: background-color 0.3s; /* Smooth background transition */
+    border: none;
+    border-radius: 5px;
 }
 
 button:hover {
-    opacity: 0.8; /* Slight fade on hover for a nice effect */
+    opacity: 0.8;
 }
 
-/* Styling the delete button with a more muted style */
 button[caption="deleteTicket"] {
-    background-color: #eee;
-    color: #777;
-}
-
-/* Primary button for proceeding to checkout */
-button[caption="checkout"] {
-    background-color: #0077b6;
+    background-color: #4B0082;
     color: #fff;
-    margin-right: 10px;
 }
 
-/* Secondary button for updating the order */
+button[caption="checkout"],
 button[caption="updateOrder"] {
-    background-color: #f1f9ff; /* Light blue, same as the header */
-    color: #0077b6;
+    background-color: #4B0082;
+    color: #fff;
+}
+
+button[caption="checkout"] {
+    margin-right: 10px;
 }
 
 .actions {
     margin-top: 20px;
     display: flex;
-    justify-content: center; /* Center the buttons */
-    gap: 15px; /* Creates space between the buttons */
+    justify-content: center;
+    gap: 15px;
 }
 
 hr {
     margin: 20px 0;
-    border: none; /* Removing the default border */
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Adding a thin light line */
+    border: none;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.totalOrderPrice h2
-{
+
+.totalOrderPrice h2 {
     margin-bottom: 0;
 }
