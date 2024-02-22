@@ -1,3 +1,4 @@
+
     body {
         font-family: 'Roboto', sans-serif;
         margin: 0;
@@ -6,10 +7,18 @@
         min-height: 100vh;
     }
 
+    .bigcontainer {
+        background: linear-gradient(to bottom, #4B0082, #000000);
+         width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+
+    }
+
     .container {
         width: 60%; /* Adjusted width */
         margin: 2em auto;
-        background: linear-gradient(to bottom, #4B0082, #000000); /* Gradient background */
+        background: rgba(128, 128, 128, 0.5); /* Gradient background */
         border-radius: 8px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         padding: 50px; /* Increased padding */
@@ -27,7 +36,7 @@
         font-size: 1.2em;
         margin: 10px 0;
         color: #ffffff; /* Change text color to white */
-        text-align: center;
+                text-align: center;
 
     }
 

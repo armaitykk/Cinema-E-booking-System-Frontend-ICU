@@ -1,68 +1,80 @@
+.checkoutContainerMain{ 
+  background: linear-gradient(to bottom, #4B0082, #000000);
+  color: #fff; /* White text color */
+}
+
 .container {
-  width: 80%;
-  margin: 2em auto;
+  width: 50%;
   padding: 20px;
-  background: linear-gradient(to bottom, #4B0082, #000000); /* Background gradient matching the login page */
-  opacity: 0.9; /* Adjusting opacity for a transparent effect */
+  border-radius: 5px;
+  background: rgba(128, 128, 128, 0.5);
+  opacity: 0.9;
+  color: #fff; /* White text color */
 }
 
 .row {
   margin-bottom: 20px;
+  color: #fff; /* White text color */
 }
 
 .col-md-6 {
   width: 50%;
   float: left;
+  color: #fff; /* White text color */
 }
 
 /* Movie Details Column */
 .MovieDetailsDiv {
   padding: 10px;
-  border: 1px solid #ccc; /* Adjusted border color */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  background: rgba(128, 128, 128, 0.5);
+  text-align: center;
+  color: #fff; /* White text color */
 }
 
 /* Payment and Promotion Column */
 .paymentDetailsDiv {
   padding: 10px;
-  border: 1px solid #ccc; /* Adjusted border color */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  background:rgba(128, 128, 128, 0.5);
+  margin-top: 10px;
+  color: #fff; /* White text color */
 }
 
 .orderDetailsDiv {
   padding: 10px;
-  border: 1px solid #ccc; /* Adjusted border color */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+  background: rgba(128, 128, 128, 0.5); 
+  color: #fff; /* White text color */
 }
 
 /* Buttons Section */
 .text-center {
   text-align: center;
+  color: #fff; /* White text color */
 }
 
-/* Adjusted width for promo code input */
 .width50per {
-  width: calc(50% - 60px); /* 50% width minus button width and padding */
+  width: calc(50% - 60px);
+  color: #fff; /* White text color */
 }
 
-/* Positioning for promo code button */
 .promo-code-section .inpBtnFlx {
   display: flex;
   justify-content: space-between;
 }
 
-/* Center align the button */
 .flexBtns {
   text-align: center;
+  color: #fff; /* White text color */
 }
 
-/* Apply the button style to all buttons */
 .flexBtns button {
   margin-right: 10px;
-  background: linear-gradient(to bottom right, #4B0082, #000000); /* Gradient background matching the login page */
+  background: linear-gradient(to bottom right, #4B0082, #000000);
   color: #fff; /* White text color */
   border: none;
   border-radius: 10px;
@@ -71,5 +83,19 @@
 }
 
 .flexBtns button:hover {
-  background: linear-gradient(to bottom right, #5a1a88, #484747); /* Gradient background for hover */
+  background: linear-gradient(to bottom right, #5a1a88, #484747);
+}
+
+.col-md-12 button {
+  margin-right: 10px;
+  background: linear-gradient(to bottom right, #4B0082, #000000);
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.col-md-12 button:hover {
+  background: linear-gradient(to bottom right, #5a1a88, #484747);
 }
