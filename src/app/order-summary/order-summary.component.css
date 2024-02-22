@@ -12,7 +12,7 @@ h2 {
 }
 
 .container {
-    background: #fff;
+    background: rgba(128, 128, 128, 0.5);
     width: 30%;
     margin: 0 auto;
     padding: 20px;
@@ -22,10 +22,11 @@ h2 {
 
 .formDiv {
     width: 100%;
-    background-color: rgba(75, 0, 130, 0.5); /* Transparent purple background */
+    background-color: rgba(128, 128, 128, 0.5); /* Transparent gray color */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
     margin-bottom: 30px;
     text-align: center;
 
@@ -33,12 +34,14 @@ h2 {
 
 .order-summary-title {
     text-align: center;
-    color: black;
+    color: white;
 }
 .formDiv h3 {
     font-weight: bold;
     margin: 10px 0;
     text-align: center;
+    color: white;
+
 }
 
 .formDiv .mb-3 {
@@ -88,4 +91,6 @@ hr {
 
 .totalOrderPrice h2 {
     margin-bottom: 0;
+    color: white;
+
 }

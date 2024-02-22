@@ -1,99 +1,89 @@
 <app-header></app-header>
-  <div class="checkoutContainerMain" [class.loading]="loading">
-    <form>
-      <div class="container">
-        <div class="row">
-          <!-- Movie Details Column -->
-          <div class="col-md-6">
-            <div class="MovieDetailsDiv">
-              <h1>Booking Details</h1>
-              <p>Movie: <span>{{movieDetailsDataFromBuy.movieName}}</span></p>
-              <p>Show Date: <span>{{movieDetailsDataFromBuy.bookingDate}}</span></p>
-              <p>Show Time: <span>{{movieDetailsDataFromBuy.showTimeFormatted}}</span></p>
-              <p>Seats Selected: <span>{{movieDetailsDataFromBuy.seats}}</span></p>
+<div class="checkoutContainerMain" [class.loading]="loading">
+  <form>
+    <div class="container">
+      <div class="row">
+        <!-- Booking Details, Payment Methods, and Promo Code Column -->
+        <div class="col-md-6">
+          <!-- Booking Details -->
+          <div class="MovieDetailsDiv">
+            <h1>Booking Details</h1>
+            <p>Movie: <span>{{movieDetailsDataFromBuy.movieName}}</span></p>
+            <p>Show Date: <span>{{movieDetailsDataFromBuy.bookingDate}}</span></p>
+            <p>Show Time: <span>{{movieDetailsDataFromBuy.showTimeFormatted}}</span></p>
+            <p>Seats Selected: <span>{{movieDetailsDataFromBuy.seats}}</span></p>
+          </div>
+          <!-- Payment Methods -->
+          <div class="paymentDetailsDiv">
+            <div class="flexBtns">
+              <h1>Payment Methods</h1>
+              <button class="paymentBtns center-align" (click)="toggleAddCardDetails()" [disabled]="hasReachedCardLimit()">
+                <i class="fa fa-plus"></i> Add a New Card
+              </button>
             </div>
           </div>
-
-          <!-- Payment Methods Column -->
-          <div class="col-md-6">
-            <div class="paymentDetailsDiv">
-              <div class="flexBtns">
-                <h1>Payment Methods</h1>
-                <button class="paymentBtns center-align" (click)="toggleAddCardDetails()" [disabled]="hasReachedCardLimit()">
-                  <i class="fa fa-plus"></i> Add a New Card
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Order Details Section -->
-        <div class="row mt-4">
-          <!-- Order Details Column -->
-          <div class="col-md-6">
-            <div class="orderDetailsDiv">
-              <div class="flexBtns">
-                <h1>Order Details</h1>
-                <div class="orderItem">
-                  <p>Adult Ticket (x1)</p>
-                  <p>$10.00</p>
+          <!-- Promo Code -->
+          <div class="paymentDetailsDiv">
+            <div class="flexBtns">
+              <h1>Promo Code</h1>
+              <div class="mb-3 promo-code-section">
+                <label for="promoCode" class="form-label">Enter Promo Code</label>
+                <div class="inpBtnFlx">
+                  <input type="text" class="form-control width100per" id="promoCode" formControlName="promoCode">
+                  <button class="addBtn" (click)="checkIfPromoCodeValid()">Apply</button>
                 </div>
-                <div class="orderItem">
-                  <p>Child Ticket (x1)</p>
-                  <p>$5.00</p>
+                <!-- Success message div -->
+                <div *ngIf="promoCodeSuccess" class="success-message">
+                  {{ promoCodeErrorMessage }}
                 </div>
-                <div class="orderItem">
-                  <p>Service Fee                                                                $2.00</p>
-                </div>
-                <div class="orderItem">
-                  <p>Online Fees</p>
-                  <p>$2.00</p>
-                </div>
-                <div class="orderItem">
-                  <p>Sales Tax (7%)</p>
-                  <p>$0.98</p>
-                </div>
-                <div class="orderTotal">
-                  <h2>Total</h2>
-                  <h2>$20.98</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Promo Code Section -->
-          <div class="col-md-6">
-            <div class="paymentDetailsDiv">
-              <div class="flexBtns">
-                <h1>Promo Code</h1>
-                <div class="mb-3 promo-code-section">
-                  <label for="promoCode" class="form-label">Enter Promo Code</label>
-                  <div class="inpBtnFlx">
-                    <input type="text" class="form-control width100per" id="promoCode" formControlName="promoCode">
-                    <button class="addBtn" (click)="checkIfPromoCodeValid()">Apply</button>
-                  </div>
-                  <!-- Success message div -->
-                  <div *ngIf="promoCodeSuccess" class="success-message">
-                    {{ promoCodeErrorMessage }}
-                  </div>
-                  <!-- Error message div -->
-                  <div *ngIf="promoCodeError" class="error-message">
-                    {{ promoCodeErrorMessage }}
-                  </div>
+                <!-- Error message div -->
+                <div *ngIf="promoCodeError" class="error-message">
+                  {{ promoCodeErrorMessage }}
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Confirm and Cancel Order Buttons -->
-        <div class="row mt-5">
-          <div class="col-md-12 text-center">
-            <button class="addBtn marR10" (click)="confirmOrder()">Confirm Order</button>
-            <button class="addBtn marR10" (click)="cancelOrder()" routerLink="/buy-tickets">Cancel Order</button>
+        <!-- Order Details Column -->
+        <div class="col-md-6">
+          <div class="orderDetailsDiv">
+            <div class="flexBtns">
+              <h1>Order Details</h1>
+              <div class="orderItem">
+                <p>Adult Ticket (x1)</p>
+                <p>$10.00</p>
+              </div>
+              <div class="orderItem">
+                <p>Child Ticket (x1)</p>
+                <p>$5.00</p>
+              </div>
+              <div class="orderItem">
+                <p>Service Fee $2.00</p>
+              </div>
+              <div class="orderItem">
+                <p>Online Fees</p>
+                <p>$2.00</p>
+              </div>
+              <div class="orderItem">
+                <p>Sales Tax (7%)</p>
+                <p>$0.98</p>
+              </div>
+              <div class="orderTotal">
+                <h2>Total</h2>
+                <h2>$20.98</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </form>
-  </div>
+      <!-- Confirm and Cancel Order Buttons -->
+      <div class="row mt-5">
+        <div class="col-md-12 text-center">
+          <button class="addBtn marR10" (click)="confirmOrder()">Confirm Order</button>
+          <button class="addBtn marR10" (click)="cancelOrder()" routerLink="/buy-tickets">Cancel Order</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
 <app-footer></app-footer>
