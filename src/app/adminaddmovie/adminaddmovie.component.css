@@ -1,63 +1,72 @@
-.addMovieWrapper
-{
-    width: 800px;
-    background: #3180ac3d;
+.addMovie-container {
+    background-color: #e2d2ee;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
     margin: 0 auto;
-    border-radius: 10px;
-    margin-bottom: 80px;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 100px;
 }
-.welcomeMessage
-{
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px;
-    border-radius: 10px;
+
+.welcomeMessage h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #4B0082;
 }
-.welcomeMessage h2
-{
-    margin-top: 10px;
-    font-weight: 800;
+
+.addMovieForm {
+    margin-top: 30px;
 }
-.addMovieForm
-{
-    margin: 0 20px;
+
+.addMovieForm label {
+    font-weight: bold;
+    color: #4B0082;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
-.addButton
-{
-    color: #FFF;
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.addButton {
     background-color: #4B0082;
-    padding: 10px 15px;
-    text-align: center;
-    border: unset;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    color: #FFF;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
     margin: 0 auto;
     display: block;
 }
-.addMovieForm label
-{
-   font-weight: 500;
-}
-.form-check label
-{
-    margin-left: 5px;
-}
-.form-group
-{
-    margin-top: 5px;
-}
 
-.addMovie-container {
+.addMovieForm select,
+.addMovieForm input[type="date"] {
+    width: 100%;
+    padding: 10px;
     border-radius: 5px;
-    background: #e2d2ee;
-    box-shadow: 2px 2px 2px 2px #d8c9e4;
-    margin: 30px auto;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.addMovieMain {
-    padding-bottom: 80px;
-    background-color: white;
+.addMovieForm textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
+
