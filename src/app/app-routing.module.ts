@@ -51,6 +51,7 @@ const routes: Routes = [
   { path: 'admin/deletemovies', component: AdmindeletemovieComponent  }, //can view (just shows "admindeletemovie works!")
   { path: 'admin/manage/users', component: AdminmanageusersComponent  }, //can view
   { path: 'admin/manage/promotions', component: AdminmanagepromotionsComponent  }, //can view
+  
 
 ];
 
