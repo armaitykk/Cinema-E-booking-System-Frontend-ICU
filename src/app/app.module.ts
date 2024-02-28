@@ -49,7 +49,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
-import { BookingHistoryComponent } from './booking-history/booking-history.component'; // Add this line for MatInputModule
+import { BookingHistoryComponent } from './booking-history/booking-history.component';
+import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component'; // Add this line for MatInputModule
 
 
 
@@ -87,7 +88,8 @@ import { BookingHistoryComponent } from './booking-history/booking-history.compo
     AdminHeaderComponent,
     AdminFooterComponent,
     MovieshomeComponent,
-    BookingHistoryComponent
+    BookingHistoryComponent,
+    RegistrationConfirmationComponent
 
   ],
   imports: [

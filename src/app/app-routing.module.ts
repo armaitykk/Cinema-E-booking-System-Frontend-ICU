@@ -22,6 +22,7 @@ import {EmailConfirmCodeComponent} from './email-confirm-code/email-confirm-code
 import {ForgotpasswordComponent} from './forgotpassword/forgotpassword.component';
 import {ResetpasswordComponent} from './resetpassword/resetpassword.component';
 import { BookingHistoryComponent } from './booking-history/booking-history.component';
+import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
 import { AuthGuard } from './auth.guard';
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, //can view
   { path: 'email-confirmation', component: EmailConfirmCodeComponent }, //can view
   { path: 'signup', component: SignupComponent }, //can view
+  { path: 'registration-confirmation', component: RegistrationConfirmationComponent},
   { path: 'viewmovieinfo/:title', component: ViewmovieinfoComponent },
   { path: 'buy-tickets/:title', component: BuyTicketsComponent },
   { path: 'checkout', component: CheckoutUiComponent }, //can view
