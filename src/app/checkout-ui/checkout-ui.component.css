@@ -74,7 +74,7 @@
 
 .flexBtns button {
   margin-right: 10px;
-  background: linear-gradient(to bottom right, #4B0082, #000000);
+  background: #4B0082;
   color: #fff; /* White text color */
   border: none;
   border-radius: 10px;
@@ -83,12 +83,12 @@
 }
 
 .flexBtns button:hover {
-  background: linear-gradient(to bottom right, #5a1a88, #484747);
+  background: #744a95;
 }
 
 .col-md-12 button {
   margin-right: 10px;
-  background: linear-gradient(to bottom right, #4B0082, #000000);
+  background: #4B0082;
   color: #fff; /* White text color */
   border: none;
   border-radius: 10px;
@@ -97,5 +97,5 @@
 }
 
 .col-md-12 button:hover {
-  background: linear-gradient(to bottom right, #5a1a88, #484747);
+  background: #744a95;
 }

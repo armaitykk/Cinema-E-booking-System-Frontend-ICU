@@ -72,7 +72,7 @@
   }
   
   .login-container button {
-    background-color: #3180AC;
+    background-color: #4B0082;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -81,7 +81,7 @@
   }
   
   .login-container button:hover {
-    background-color: #3180AC;
+    background-color: #744a95;
   }
   
   .forgot-password {

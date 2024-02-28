@@ -29,7 +29,7 @@ h2 {
   margin: 10px 0;
 }
 
-.saveBtn {
+.saveButton {
   color: #fff;
   background-color: #4B0082;
   padding: 10px 15px;
@@ -40,8 +40,8 @@ h2 {
   display: block;
 }
 
-.saveBtn:hover{
-  background-color: #796885;
+.saveButton:hover{
+  background-color: #744a95;
 }
 
 /* Confirmation Modal */

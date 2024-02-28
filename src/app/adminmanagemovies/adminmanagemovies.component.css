@@ -25,6 +25,11 @@
     border-radius: 10px;
     margin-bottom: 15px;
 }
+
+.addButton:hover
+{
+  background-color: #744a95;
+}
 .moviesListManage
 {
   margin-top: 20px;

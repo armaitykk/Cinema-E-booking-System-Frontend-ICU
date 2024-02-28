@@ -1,41 +1,40 @@
-.addUserWrapper
-{
-    width: 800px;
-    background: #3180ac3d;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 5px #f2f7fa;
+.addUserWrapper {
+    max-width: 900px;
+    background: #e2d2ee;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 30px auto;
-}
-.welcomeMessage
-{
-    height: 50px;
-    /* background: radial-gradient(#3180AC, #ffffff); */
-    background: #3180AC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px;
-    border-radius: 5px;
-}
-.welcomeMessage h2
-{
-    margin-top: 10px;
+    padding: 20px;
+  }
+
+
+h2 {
+    text-align:center;
     font-weight: 800;
-}
+    color: #4B0082; 
+  }
 .addUserForm
 {
     margin: 0 20px;
     margin-bottom: 20px;
+    padding-top: 10px;
 }
-.addBtn
+.addButton
 {
     color: #FFF;
-    background-color: #3180AC;
+    background-color: #4B0082;
     padding: 10px 15px;
     text-align: center;
     border: unset;
     border-radius: 10px;
     margin-bottom: 15px;
+    margin: 0 auto;
+    display: block;
+}
+
+.addButton:hover 
+{
+    background-color: #744a95;
 }
 .addUserForm label
 {

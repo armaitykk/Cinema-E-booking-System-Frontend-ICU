@@ -144,7 +144,7 @@ select {
 }
 
 button {
-    background-color: #3180AC;
+    background-color: #4B0082;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -155,7 +155,7 @@ button {
 }
 
 button:hover {
-    background-color: #3180AC;
+    background-color: #744a95;
 }
 
 .movie-poster {
@@ -199,7 +199,7 @@ button:hover {
 
 /* Style the "+" and "-" buttons */
 .counterBtn:hover {
-    background-color: #3180AC;
+    background-color: #744a95;
 }
 
 /* Style the input when it's focused */
@@ -235,7 +235,7 @@ button:hover {
 .seatsInfoBtn
 {
     color: #FFF;
-    background-color: #3180AC;
+    background-color: #4B0082;
     padding: 10px 15px;
     text-align: center;
     border: unset;
@@ -249,7 +249,7 @@ button:hover {
 .movieDetailsSection
 {
     padding-bottom: 10px;
-    border-bottom: 1px solid #3180AC;
+    border-bottom: 1px solid #4B0082;
 }
 .popup-overlay {
     position: fixed;
@@ -341,7 +341,7 @@ button:hover {
   
   .popup-content h2 {
     margin-bottom: 15px;
-    border-bottom: 1px solid #3180AC;
+    border-bottom: 1px solid #4B0082;
     text-align: center;
   }
   
@@ -354,20 +354,6 @@ button:hover {
     font-weight: normal;
   }
   
-  /* .button-group {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .button-group button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button-group button:hover {
-    background: #ddd; 
-  } */
+
   
   

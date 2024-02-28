@@ -53,6 +53,10 @@
     display: block;
 }
 
+.addButton:hover {
+    background-color: #744a95;
+}
+
 .addMovieForm select,
 .addMovieForm input[type="date"] {
     width: 100%;

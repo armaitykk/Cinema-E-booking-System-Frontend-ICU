@@ -34,16 +34,7 @@
     font-weight: 900;
     margin-bottom: 0;
   }
-  .addBtn
-{
-    color: #FFF;
-    background-color: #4B0082;
-    padding: 10px 15px;
-    text-align: center;
-    border: unset;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+
 .moviesListManage
 {
   margin-top: 20px;
@@ -82,17 +73,5 @@
     text-align: left;
   }
 
-  
-  .adminHomeButton-container button {
-    background-color: #4B0082;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .adminHomeButton-container button:hover {
-    background-color: #4B0082;
-  }
+
   
